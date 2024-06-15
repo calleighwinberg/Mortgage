@@ -1,0 +1,9 @@
+
+    <% layout('layout/boilerplate') %>
+    <h1>all TCAs</h1>
+    <div><a href="/tcas/new">New TCA</a></div>
+    <ul>
+        <% for (let tca of tcas) {%>
+        <li><a href="/tcas/<%= tca._id %>"><%= tca.name %></a> </li>
+        <% }%>
+    </ul>
