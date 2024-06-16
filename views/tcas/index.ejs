@@ -2,8 +2,25 @@
     <% layout('layout/boilerplate') %>
     <h1>all TCAs</h1>
     <div><a href="/tcas/new">New TCA</a></div>
-    <ul>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th >First Name</th>
+                <th >Last Name</th>
+                <th >Property Address</th>
+                <th >View</th>
+                <th >Update</th>
+            </tr>
+        </thead>
         <% for (let tca of tcas) {%>
-        <li><a href="/tcas/<%= tca._id %>"><%= tca.name %></a> </li>
-        <% }%>
-    </ul>
+            <tr>
+                <td> Name </td>
+                <td> name2 </td>
+                <td> <%= tca.name %> </td>
+                <td><a href="/tcas/<%= tca._id %>">View</a></td>
+                <td><a href="/tcas/<%=tca._id%>/edit">Update</a></td>
+            </tr>
+        <%}%>
+    </table>
