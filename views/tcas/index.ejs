@@ -16,9 +16,9 @@
         </thead>
         <% for (let tca of tcas) {%>
             <tr>
-                <td> Name </td>
-                <td> name2 </td>
-                <td> <%= tca.name %> </td>
+                <td> <%= tca.firstName %> </td>
+                <td> <%= tca.lastName %></td>
+                <td> <%= tca.address %> </td>
                 <td><a href="/tcas/<%= tca._id %>">View</a></td>
                 <td><a href="/tcas/<%=tca._id%>/edit">Update</a></td>
             </tr>

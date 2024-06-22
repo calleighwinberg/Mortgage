@@ -5,6 +5,7 @@ const ejsMate = require('ejs-mate');
 const TCA = require('./models/tca');
 const methodOverride = require('method-override');
 const tca = require('./models/tca');
+const Scenario = require('./models/scenario');
 
 mongoose.connect('mongodb://localhost:27017/mortgage-planning', {
     useNewUrlParser: true,
@@ -66,6 +67,12 @@ app.delete('/tcas/:id', async (req,res) => {
     const { id } = req.params;
     await TCA.findByIdAndDelete(id)
     res.redirect('/tcas');
+})
+
+
+app.post('/tcas/:id/scenarios', async(req, res) =>{
+    const tca = await TCA.findById(req.params.id);
+    const review = new Review(req.body.review)
 })
 
 

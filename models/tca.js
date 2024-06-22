@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TCASchema = new Schema({
-    name: String,
+    firstName: String,
+    lastName: String, 
+    address: String,
     description: String, 
 })
 
