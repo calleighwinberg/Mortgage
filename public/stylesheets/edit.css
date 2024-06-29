@@ -1,3 +1,13 @@
-.nav-pills li a:hover{
+.nav-pills a:hover{
     background-color: blue;
+}
+
+.container-fluid {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    overflow: hidden;
+}
+
+.navbar {
+    padding-left: 1rem;
 }
