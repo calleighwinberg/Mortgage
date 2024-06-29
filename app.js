@@ -26,6 +26,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.get('/', (req, res) => {
@@ -67,6 +68,10 @@ app.delete('/tcas/:id', async (req,res) => {
     const { id } = req.params;
     await TCA.findByIdAndDelete(id)
     res.redirect('/tcas');
+})
+
+app.post('/tcas/:id/scenarios', async(req,res) => {
+    
 })
 
 
