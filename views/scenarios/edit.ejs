@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,8 @@
     <%- include('../partials/navbar')%>
         <div class="container-fluid">
             <div class="row flex-nowrap">
-                <div class="bg-dark col-auto col-md-3 col-lg-2 min-vh-100 d-flex flex-column justify-content-between">
+                <div
+                    class="bg-dark col-auto col-md-3 col-lg-2 min-vh-100 d-flex flex-column justify-content-between">
                     <div class="bg-dark p-2">
                         <a class="d-flex text-decoration-none mt- align-items-center text-light" href="">
                             <span class="fs-5">SideMenu</span>
@@ -35,12 +37,10 @@
 
                             <li class="nav-item my-1">
                                 <button class="btn btn-toggle align-items-center rounded collapsed text-light"
-                                    data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true">                                   
-                                    <a href="/tcas/<%=tca._id%>/scenarioone" class="nav-link text-light">
-                                        <i class="bi bi-file-earmark-text"></i>
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
-                                        <i class="bi bi-caret-down-fill"></i>
-                                    </a>                        
+                                    data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
+                                    <i class="bi bi-caret-down-fill"></i>
                                 </button>
                                 <div class="collapse" id="p1-collapse">
                                     <ul class="btn-toggle-nav  fw-normal pb-1 ">
@@ -61,17 +61,12 @@
                             </li>
 
 
-
-
-
                             <li class="nav-item my-1">
                                 <button class="btn btn-toggle align-items-center rounded collapsed text-light"
                                     data-bs-toggle="collapse" data-bs-target="#p2-collapse" aria-expanded="true">
-                                    <a href="#" class="nav-link text-light">
-                                        <i class="bi bi-file-earmark-text"></i>
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Product 2</span>
-                                        <i class="bi bi-caret-down-fill"></i>
-                                    </a> 
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <span class="fs-4 ms-3 d-none d-sm-inline">Product 2</span>
+                                    <i class="bi bi-caret-down-fill"></i>
                                 </button>
                                 <div class="collapse" id="p2-collapse">
                                     <ul class="btn-toggle-nav  fw-normal pb-1 ">
@@ -93,42 +88,37 @@
 
 
                             <li class="nav-item my-1">
-                                <a href="/tcas/<%=tca._id%>" class="nav-link text-light">
-                                    <i class="bi bi-easel"></i>
-                                    <span class="fs-4 ms-3 d-none d-sm-inline">Presentation View</span>
+                                <a href="#" class="nav-link text-light">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <span class="fs-4 ms-3 d-none d-sm-inline">Add Product</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
                 <div class=" col-xs-12 col-sm-9 p-3">
-                    <h1>This presentation is for <%=tca.firstName%>
-                            <%=tca.lastName%>
-                    </h1>
-                    <form action="/tcas/<%=tca._id%>?_method=PUT" method="POST">
+                    <form action="/tcas/<%=tca._id%>/scenarios" method="POST">
                         <div>
-                            <label for="name">First Name</label>
-                            <input type="text" id="firstName" , name="tca[firstName]" value="<%=tca.firstName%>">
+                            <label for="name">Product Name</label>
+                            <input type="text" id="name", name="scenario[name]">
                         </div>
                         <div>
-                            <label for="name">Last Name</label>
-                            <input type="text" id="lastName" , name="tca[lastName]" value="<%=tca.lastName%>">
+                            <label for="name">Purchase Price</label>
+                            <input type="text" id="price", name="scenario[price]">
                         </div>
                         <div>
-                            <label for="name">Address</label>
-                            <input type="text" id="address" , name="tca[address]" value="<%=tca.address%>">
+                            <label for="name">Down Payment</label>
+                            <input type="text" id="downPayment", name="scenario[downPayment]">
                         </div>
                         <div>
-                            <label for="description">Description</label>
-                            <input type="text" id="description" , name="tca[description]" value="<%=tca.description%>">
+                            <label for="rate">Rate</label>
+                            <input type="text" id="rate", name="scenario[rate]">
+                        </div>
+                        <div>
+                            <label for="term">Term</label>
+                            <input type="text" id="term", name="scenario[term]">
                         </div>
                         <button> Save </button>
-                    </form>
-
-                    <h2>Add a Scenario </h2>
-                    <form action="/tcas/<%=tca._id%>" method="POST">
-                        <button class="btn btn-success">Save Scenario</button>
                     </form>
                 </div>
             </div>

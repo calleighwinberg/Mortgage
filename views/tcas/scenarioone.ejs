@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>edit view</title>
+    <title>edit scenario</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <!-- Option 1: Include in HTML -->
@@ -36,13 +36,13 @@
                             <li class="nav-item my-1">
                                 <button class="btn btn-toggle align-items-center rounded collapsed text-light"
                                     data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true">                                   
-                                    <a href="/tcas/<%=tca._id%>/scenarioone" class="nav-link text-light">
+                                    <a href="/tcas/<%=tca._id%>/scenario1" class="nav-link text-light">
                                         <i class="bi bi-file-earmark-text"></i>
                                         <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
                                         <i class="bi bi-caret-down-fill"></i>
                                     </a>                        
                                 </button>
-                                <div class="collapse" id="p1-collapse">
+                                <div class="collapse show" id="p1-collapse">
                                     <ul class="btn-toggle-nav  fw-normal pb-1 ">
                                         <li class="nav-item my-1">
                                             <a href="#" class="nav-link text-light">
@@ -102,33 +102,24 @@
                     </div>
                 </div>
 
+
+
+
                 <div class=" col-xs-12 col-sm-9 p-3">
                     <h1>This presentation is for <%=tca.firstName%>
                             <%=tca.lastName%>
                     </h1>
-                    <form action="/tcas/<%=tca._id%>?_method=PUT" method="POST">
+                    <form action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
                         <div>
-                            <label for="name">First Name</label>
-                            <input type="text" id="firstName" , name="tca[firstName]" value="<%=tca.firstName%>">
-                        </div>
+                            <label for="name">Product Name</label>
+                            <input type="text" id="scenarioName" , name="tca[scenarioone][name]" value="<%=tca.scenarioone.name%>">
+                        </div> 
                         <div>
-                            <label for="name">Last Name</label>
-                            <input type="text" id="lastName" , name="tca[lastName]" value="<%=tca.lastName%>">
-                        </div>
-                        <div>
-                            <label for="name">Address</label>
-                            <input type="text" id="address" , name="tca[address]" value="<%=tca.address%>">
-                        </div>
-                        <div>
-                            <label for="description">Description</label>
-                            <input type="text" id="description" , name="tca[description]" value="<%=tca.description%>">
-                        </div>
+                            <label for="name">Price</label>
+                            <input type="text" id="scenarioPrice" placeholder="0.00" name="tca[scenarioone][price]" value="<%=tca.scenarioone.price%>">
+                        </div> 
+                        
                         <button> Save </button>
-                    </form>
-
-                    <h2>Add a Scenario </h2>
-                    <form action="/tcas/<%=tca._id%>" method="POST">
-                        <button class="btn btn-success">Save Scenario</button>
                     </form>
                 </div>
             </div>

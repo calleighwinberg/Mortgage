@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const TCA = require('./models/tca');
 const methodOverride = require('method-override');
-const tca = require('./models/tca');
 const Scenario = require('./models/scenario');
 
 mongoose.connect('mongodb://localhost:27017/mortgage-planning', {
@@ -42,10 +41,10 @@ app.get('/tcas/new', (req, res) => {
     res.render('tcas/new')
 })
 
-app.post('/tcas', async (req, res) => {
+app.post('/tcas', async (req, res) => {     //post route to create a new TCA
     const tca = new TCA(req.body.tca);
     await tca.save();
-    res.redirect(`/tcas/${tca._id}`);
+    res.redirect(`/tcas/${tca._id}/edit`);
 });
 
 app.get('/tcas/:id', async (req, res) => {
@@ -53,12 +52,12 @@ app.get('/tcas/:id', async (req, res) => {
     res.render('tcas/show', { tca });
 })
 
-app.get('/tcas/:id/edit', async (req, res) => {
+app.get('/tcas/:id/edit', async (req, res) => {     //get route to show the edit page
     const tca = await TCA.findById(req.params.id)
     res.render('tcas/edit', { tca });
 })
 
-app.put('/tcas/:id', async(req, res) => {
+app.put('/tcas/:id', async(req, res) => {           //put route to update the TCA
     const { id } = req.params;
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
     res.redirect(`/tcas/${tca._id}`)
@@ -70,15 +69,21 @@ app.delete('/tcas/:id', async (req,res) => {
     res.redirect('/tcas');
 })
 
-app.post('/tcas/:id/scenarios', async(req,res) => {
-    
-})
 
 
-app.post('/tcas/:id/scenarios', async(req, res) =>{
+
+
+app.get('/tcas/:id/scenarioone', async(req, res) =>{
     const tca = await TCA.findById(req.params.id);
-    const review = new Review(req.body.review)
+    res.render('tcas/scenarioone', { tca });
 })
+
+app.put('/tcas/:id/scenarioone', async(req, res) => {
+    const { id } = req.params;
+    const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
+    res.redirect(`/tcas/${tca._id}`)
+})
+
 
 
 app.listen(3000, ()=> {
