@@ -17,22 +17,18 @@
     <%- include('../partials/navbar')%>
         <div class="container-fluid">
             <div class="row flex-nowrap">
-                <div class="bg-dark col-auto col-md-3 col-lg-2 min-vh-100 d-flex flex-column justify-content-between">
+                <div class="bg-dark col-auto col-md-auto min-vh-100 d-flex flex-column justify-content-between">
                     <div class="bg-dark p-2">
                         <a class="d-flex text-decoration-none mt- align-items-center text-light" href="">
                             <span class="fs-5">SideMenu</span>
                         </a>
                         <ul class="nav nav-pills flex-column mt-4" id="menu">
                             <li class="nav-item my-1">
-                                <a href="#" class="nav-link text-light">
+                                <a href="/tcas/<%=tca._id%>/edit" class="nav-link text-light">
                                     <i class="bi bi-person-fill"></i>
                                     <span class="fs-4 ms-3 d-none d-sm-inline">Client</span>
                                 </a>
                             </li>
-
-
-
-
                             <li class="nav-item my-1">
                                 <button class="btn btn-toggle align-items-center rounded collapsed text-light"
                                     data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true">                                   
@@ -45,25 +41,19 @@
                                 <div class="collapse" id="p1-collapse">
                                     <ul class="btn-toggle-nav  fw-normal pb-1 ">
                                         <li class="nav-item my-1">
-                                            <a href="#" class="nav-link text-light">
-
+                                            <button id="cc1" class="btn align-items-center rounded collapsed text-light">
                                                 <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
-                                            </a>
+                                            </button>
                                         </li>
-                                        <li class="nav-item my-1">
-                                            <a href="#" class="nav-link text-light">
 
+                                        <li class="nav-item my-1">
+                                            <button id="cc1" class="btn align-items-center rounded collapsed text-light">
                                                 <span class="fs-4 ms-3 d-none d-sm-inline">Monthly Costs</span>
-                                            </a>
+                                            </button>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
-
-
-
-
                             <li class="nav-item my-1">
                                 <button class="btn btn-toggle align-items-center rounded collapsed text-light"
                                     data-bs-toggle="collapse" data-bs-target="#p2-collapse" aria-expanded="true">
@@ -124,11 +114,6 @@
                             <input type="text" id="description" , name="tca[description]" value="<%=tca.description%>">
                         </div>
                         <button> Save </button>
-                    </form>
-
-                    <h2>Add a Scenario </h2>
-                    <form action="/tcas/<%=tca._id%>" method="POST">
-                        <button class="btn btn-success">Save Scenario</button>
                     </form>
                 </div>
             </div>

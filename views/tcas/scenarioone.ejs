@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>edit scenario</title>
+    <title>edit scenario1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <!-- Option 1: Include in HTML -->
@@ -17,81 +17,75 @@
     <%- include('../partials/navbar')%>
         <div class="container-fluid">
             <div class="row flex-nowrap">
-                <div class="bg-dark col-auto col-md-3 col-lg-2 min-vh-100 d-flex flex-column justify-content-between">
+
+
+                <div class="bg-dark col-auto col-md-auto min-vh-100 d-flex flex-column justify-content-between">
                     <div class="bg-dark p-2">
                         <a class="d-flex text-decoration-none mt- align-items-center text-light" href="">
                             <span class="fs-5">SideMenu</span>
                         </a>
                         <ul class="nav nav-pills flex-column mt-4" id="menu">
                             <li class="nav-item my-1">
-                                <a href="#" class="nav-link text-light">
+                                <a href="/tcas/<%=tca._id%>/edit" class="nav-link text-light">
                                     <i class="bi bi-person-fill"></i>
                                     <span class="fs-4 ms-3 d-none d-sm-inline">Client</span>
                                 </a>
                             </li>
 
 
-
-
                             <li class="nav-item my-1">
-                                <button class="btn btn-toggle align-items-center rounded collapsed text-light"
-                                    data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true">                                   
-                                    <a href="/tcas/<%=tca._id%>/scenario1" class="nav-link text-light">
-                                        <i class="bi bi-file-earmark-text"></i>
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
-                                        <i class="bi bi-caret-down-fill"></i>
-                                    </a>                        
-                                </button>
+                                <a id="p1" href="/tcas/<%=tca._id%>/scenarioone"
+                                    class="btn btn-toggle align-items-center rounded collapsed text-light"
+                                    data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true"
+                                    role="button">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </a>
                                 <div class="collapse show" id="p1-collapse">
                                     <ul class="btn-toggle-nav  fw-normal pb-1 ">
                                         <li class="nav-item my-1">
-                                            <a href="#" class="nav-link text-light">
-
+                                            <button id="cc1"
+                                                class="btn align-items-center rounded collapsed text-light">
                                                 <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
-                                            </a>
+                                            </button>
                                         </li>
                                         <li class="nav-item my-1">
-                                            <a href="#" class="nav-link text-light">
-
+                                            <button id="mc1"
+                                                class="btn align-items-center rounded collapsed text-light">
                                                 <span class="fs-4 ms-3 d-none d-sm-inline">Monthly Costs</span>
-                                            </a>
+                                            </button>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
-
-
-
-
                             <li class="nav-item my-1">
-                                <button class="btn btn-toggle align-items-center rounded collapsed text-light"
-                                    data-bs-toggle="collapse" data-bs-target="#p2-collapse" aria-expanded="true">
-                                    <a href="#" class="nav-link text-light">
-                                        <i class="bi bi-file-earmark-text"></i>
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Product 2</span>
-                                        <i class="bi bi-caret-down-fill"></i>
-                                    </a> 
-                                </button>
+                                <a id="p2" href="#"
+                                    class="btn btn-toggle align-items-center rounded collapsed text-light"
+                                    data-bs-toggle="collapse" data-bs-target="#p2-collapse" aria-expanded="true"
+                                    role="button">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <span class="fs-4 ms-3 d-none d-sm-inline">Product 2</span>
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </a>
                                 <div class="collapse" id="p2-collapse">
                                     <ul class="btn-toggle-nav  fw-normal pb-1 ">
                                         <li class="nav-item my-1">
-                                            <a href="#" class="nav-link text-light">
-
+                                            <button id="cc2"
+                                                class="btn align-items-center rounded collapsed text-light">
                                                 <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
-                                            </a>
+                                            </button>
                                         </li>
-                                        <li class="nav-item my-1">
-                                            <a href="#" class="nav-link text-light">
 
+                                        <li class="nav-item my-1">
+                                            <button id="mc2"
+                                                class="btn align-items-center rounded collapsed text-light">
                                                 <span class="fs-4 ms-3 d-none d-sm-inline">Monthly Costs</span>
-                                            </a>
+                                            </button>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
-
                             <li class="nav-item my-1">
                                 <a href="/tcas/<%=tca._id%>" class="nav-link text-light">
                                     <i class="bi bi-easel"></i>
@@ -109,16 +103,86 @@
                     <h1>This presentation is for <%=tca.firstName%>
                             <%=tca.lastName%>
                     </h1>
-                    <form action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
+                    <form id="product1" action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
                         <div>
                             <label for="name">Product Name</label>
-                            <input type="text" id="scenarioName" , name="tca[scenarioone][name]" value="<%=tca.scenarioone.name%>">
-                        </div> 
+                            <input type="text" id="scenarioName" , name="tca[scenarioone][name]"
+                                value="<%=tca.scenarioone.name%>">
+                        </div>
                         <div>
                             <label for="name">Price</label>
-                            <input type="text" id="scenarioPrice" placeholder="0.00" name="tca[scenarioone][price]" value="<%=tca.scenarioone.price%>">
-                        </div> 
-                        
+                            <input type="text" id="scenarioPrice" placeholder="$0.00" name="tca[scenarioone][price]"
+                                value="<%=tca.scenarioone.price%>">
+                        </div>
+                        <div>
+                            <label for="name">Down Payment</label>
+                            <input type="text" id="scenarioDownPayment" placeholder="$0.000"
+                                name="tca[scenarioone][downPayment]" value="<%=tca.scenarioone.downPayment%>">
+                        </div>
+                        <div>
+                            <label for="name">Rate</label>
+                            <input type="text" id="scenarioRate" placeholder="0.000%" name="tca[scenarioone][rate]"
+                                value="<%=tca.scenarioone.rate%>">
+                        </div>
+                        <div>
+                            <label for="name">Term</label>
+                            <input type="text" id="scenarioTerm" placeholder="0" name="tca[scenarioone][term]"
+                                value="<%=tca.scenarioone.term%>">
+                        </div>
+                        <button> Save </button>
+                    </form>
+
+
+                    <form id="closingCosts" action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
+                        <div>
+                            <label for="name">APR related closing costs</label>
+                            <input type="text" id="scenarioAPRCosts" placeholder="$0.00"
+                                name="tca[scenarioone][aprCosts]" value="<%=tca.scenarioone.aprCosts%>">
+                        </div>
+                        <div>
+                            <label for="name">Points</label>
+                            <input type="text" id="scenarioPoints" placeholder="0.000%" name="tca[scenarioone][points]"
+                                value="<%=tca.scenarioone.points%>">
+                        </div>
+                        <div>
+                            <label for="name">Prepaid Escrows</label>
+                            <input type="text" id="scenarioEscrow" placeholder="$0.00"
+                                name="tca[scenarioone][escrowFees]" value="<%=tca.scenarioone.escrowFees%>">
+                        </div>
+                        <div>
+                            <label for="name">Non-APR Costs</label>
+                            <input type="text" id="scenarioAPR" placeholder="$0.00" name="tca[scenarioone][noAPRcosts]"
+                                value="<%=tca.scenarioone.noAPRcosts%>">
+                        </div>
+                        <div>
+                            <label for="name">Contributions</label>
+                            <input type="text" id="scenarioContribution" placeholder="$0.00"
+                                name="tca[scenarioone][contribution]" value="<%=tca.scenarioone.contribution%>">
+                        </div>
+                        <button> Save </button>
+                    </form>
+
+                    <form id="monthlyCosts" action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
+                        <div>
+                            <label for="name">HOA dues</label>
+                            <input type="text" id="scenarioHoa" placeholder="$0.00" name="tca[scenarioone][hoa]"
+                                value="<%=tca.scenarioone.hoa%>">
+                        </div>
+                        <div>
+                            <label for="name">Hazard Insurance Amount</label>
+                            <input type="text" id="scenarioHazIns" placeholder="$0.00" name="tca[scenarioone][hazIns]"
+                                value="<%=tca.scenarioone.hazIns%>">
+                        </div>
+                        <div>
+                            <label for="name">Property Tax Amount</label>
+                            <input type="text" id="scenarioTaxes" placeholder="0.00%" name="tca[scenarioone][taxes]"
+                                value="<%=tca.scenarioone.taxes%>">
+                        </div>
+                        <div>
+                            <label for="name">Mortgage Insurance Amount</label>
+                            <input type="text" id="scenarioPMI" placeholder="0" name="tca[scenarioone][pmi]"
+                                value="<%=tca.scenarioone.pmi%>">
+                        </div>
                         <button> Save </button>
                     </form>
                 </div>
@@ -129,6 +193,29 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>
+            <script>
+                const cc1 = document.querySelector('#cc1');
+                cc1.onclick = function () {
+                    document.getElementById('closingCosts').style.display = 'block';
+                    document.getElementById('monthlyCosts').style.display = 'none';
+                    document.getElementById('product1').style.display = 'none';
+                }
+
+                const mc1 = document.querySelector('#mc1');
+                mc1.onclick = function () {
+                    document.getElementById('monthlyCosts').style.display = 'block';
+                    document.getElementById('closingCosts').style.display = 'none';
+                    document.getElementById('product1').style.display = 'none';
+                }
+
+                const p1 = document.querySelector('#p1');
+                p1.onclick = function () {
+                    document.getElementById('monthlyCosts').style.display = 'none';
+                    document.getElementById('closingCosts').style.display = 'none';
+                    document.getElementById('product1').style.display = 'block';
+                }
+
+            </script>
 
 
 </body>

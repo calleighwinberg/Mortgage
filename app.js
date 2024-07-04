@@ -81,7 +81,7 @@ app.get('/tcas/:id/scenarioone', async(req, res) =>{
 app.put('/tcas/:id/scenarioone', async(req, res) => {
     const { id } = req.params;
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
-    res.redirect(`/tcas/${tca._id}`)
+    res.redirect(`/tcas/${tca._id}/scenarioone`)
 })
 
 

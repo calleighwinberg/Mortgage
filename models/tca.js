@@ -18,6 +18,7 @@ const TCASchema = new Schema({
         prepaidInterest: Number,
         escrowFees: Number, 
         noAPRcosts: Number, 
+        contribution: Number,
         hoa: Number, 
         hazIns: Number,
         taxes: Number,

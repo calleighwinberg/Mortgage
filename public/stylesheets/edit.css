@@ -11,3 +11,12 @@
 .navbar {
     padding-left: 1rem;
 }
+
+
+#closingCosts {
+    display: none;
+}
+
+#monthlyCosts {
+    display: none;
+}
