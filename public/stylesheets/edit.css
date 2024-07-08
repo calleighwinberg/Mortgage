@@ -2,21 +2,32 @@
     background-color: blue;
 }
 
+.nav-pills button:hover{
+    background-color: blue;
+}
+
 .container-fluid {
     padding-left: 0rem;
     padding-right: 0rem;
     overflow: hidden;
 }
 
+ul {
+    list-style-type: none;
+  }  
+
 .navbar {
     padding-left: 1rem;
 }
 
-
-#closingCosts {
+#product1 {
     display: none;
 }
 
-#monthlyCosts {
+#closingCosts1 {
+    display: none;
+}
+
+#monthlyCosts1 {
     display: none;
 }

@@ -59,9 +59,12 @@ app.get('/tcas/:id/edit', async (req, res) => {     //get route to show the edit
 
 app.put('/tcas/:id', async(req, res) => {           //put route to update the TCA
     const { id } = req.params;
+    console.log(req.body);
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
-    res.redirect(`/tcas/${tca._id}`)
 })
+
+
+
 
 app.delete('/tcas/:id', async (req,res) => {
     const { id } = req.params;
@@ -71,17 +74,11 @@ app.delete('/tcas/:id', async (req,res) => {
 
 
 
-
-
-app.get('/tcas/:id/scenarioone', async(req, res) =>{
-    const tca = await TCA.findById(req.params.id);
-    res.render('tcas/scenarioone', { tca });
-})
-
 app.put('/tcas/:id/scenarioone', async(req, res) => {
+    //console.log(req.params);
     const { id } = req.params;
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
-    res.redirect(`/tcas/${tca._id}/scenarioone`)
+    //res.redirect(`/tcas/${tca._id}/edit`)
 })
 
 

@@ -56,7 +56,7 @@
                     </form>
 
 
-                    <form id="closingCosts" action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
+                    <form id="closingCosts1" action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
                         <div>
                             <label for="name">APR related closing costs</label>
                             <input type="text" id="scenarioAPRCosts" placeholder="$0.00"
@@ -85,7 +85,7 @@
                         <button> Save </button>
                     </form>
 
-                    <form id="monthlyCosts" action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
+                    <form id="monthlyCosts1" action="/tcas/<%=tca._id%>/scenarioone?_method=PUT" method="POST">
                         <div>
                             <label for="name">HOA dues</label>
                             <input type="text" id="scenarioHoa" placeholder="$0.00" name="tca[scenarioone][hoa]"
@@ -108,6 +108,9 @@
                         </div>
                         <button> Save </button>
                     </form>
+
+
+
                 </div>
             </div>
         </div>
@@ -119,22 +122,22 @@
             <script>
                 const cc1 = document.querySelector('#cc1');
                 cc1.onclick = function () {
-                    document.getElementById('closingCosts').style.display = 'block';
-                    document.getElementById('monthlyCosts').style.display = 'none';
+                    document.getElementById('closingCosts1').style.display = 'block';
+                    document.getElementById('monthlyCosts1').style.display = 'none';
                     document.getElementById('product1').style.display = 'none';
                 }
 
                 const mc1 = document.querySelector('#mc1');
                 mc1.onclick = function () {
-                    document.getElementById('monthlyCosts').style.display = 'block';
-                    document.getElementById('closingCosts').style.display = 'none';
+                    document.getElementById('monthlyCosts1').style.display = 'block';
+                    document.getElementById('closingCosts1').style.display = 'none';
                     document.getElementById('product1').style.display = 'none';
                 }
 
                 const p1 = document.querySelector('#p1');
                 p1.onclick = function () {
-                    document.getElementById('monthlyCosts').style.display = 'none';
-                    document.getElementById('closingCosts').style.display = 'none';
+                    document.getElementById('monthlyCosts1').style.display = 'none';
+                    document.getElementById('closingCosts1').style.display = 'none';
                     document.getElementById('product1').style.display = 'block';
                 }
 
