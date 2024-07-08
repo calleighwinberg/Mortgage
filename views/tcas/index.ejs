@@ -1,26 +1,34 @@
+<% layout('layout/boilerplate') %>
+    <main class="contianer mt-5 ml-5">
+        <h1>all TCAs</h1>
+        <div><a href="/tcas/new">New TCA</a></div>
 
-    <% layout('layout/boilerplate') %>
-    <h1>all TCAs</h1>
-    <div><a href="/tcas/new">New TCA</a></div>
 
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Property Address</th>
+                    <th>View</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <% for (let tca of tcas) {%>
+                <tr>
+                    <td>
+                        <%= tca.firstName %>
+                    </td>
+                    <td>
+                        <%= tca.lastName %>
+                    </td>
+                    <td>
+                        <%= tca.address %>
+                    </td>
+                    <td><a href="/tcas/<%= tca._id %>">View</a></td>
+                    <td><a href="/tcas/<%=tca._id%>/edit">Update</a></td>
+                </tr>
+                <%}%>
+        </table>
 
-    <table>
-        <thead>
-            <tr>
-                <th >First Name</th>
-                <th >Last Name</th>
-                <th >Property Address</th>
-                <th >View</th>
-                <th >Update</th>
-            </tr>
-        </thead>
-        <% for (let tca of tcas) {%>
-            <tr>
-                <td> <%= tca.firstName %> </td>
-                <td> <%= tca.lastName %></td>
-                <td> <%= tca.address %> </td>
-                <td><a href="/tcas/<%= tca._id %>">View</a></td>
-                <td><a href="/tcas/<%=tca._id%>/edit">Update</a></td>
-            </tr>
-        <%}%>
-    </table>
+    </main>

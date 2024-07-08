@@ -1,12 +1,17 @@
 <% layout('layout/boilerplate') %>
-    <h1> Hi <%=tca.firstName%>! </h1>
-    <h2><%= tca.address %></h2>
-    <p><a href="/tcas/<%=tca._id%>/edit">Update</a></p>
-    <p>
+    <main class="contianer mt-5 ml-5">
+        <h1> Hi <%=tca.firstName%>! </h1>
+        <h2>
+            <%= tca.address %>
+        </h2>
+        <p><a href="/tcas/<%=tca._id%>/edit">Update</a></p>
+        <p>
         <form action="/tcas/<%=tca._id%>?_method=DELETE" method="POST">
             <button>Delete</button>
         </form>
-    </p>
-    <footer>
-        <a href="/tcas">All TCAs</a>
-    </footer>  
+        </p>
+        <footer>
+            <a href="/tcas">All TCAs</a>
+        </footer>
+
+    </main>

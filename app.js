@@ -63,16 +63,11 @@ app.put('/tcas/:id', async(req, res) => {           //put route to update the TC
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
 })
 
-
-
-
 app.delete('/tcas/:id', async (req,res) => {
     const { id } = req.params;
     await TCA.findByIdAndDelete(id)
     res.redirect('/tcas');
 })
-
-
 
 app.put('/tcas/:id/scenarioone', async(req, res) => {
     //console.log(req.params);
@@ -80,8 +75,6 @@ app.put('/tcas/:id/scenarioone', async(req, res) => {
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
     //res.redirect(`/tcas/${tca._id}/edit`)
 })
-
-
 
 app.listen(3000, ()=> {
     console.log('serving on port 3000')
