@@ -1,9 +1,56 @@
 <% layout('layout/boilerplate') %>
-    <main class="contianer mt-5 ml-5">
-        <h1> Hi <%=tca.firstName%>! </h1>
-        <h2>
-            <%= tca.address %>
-        </h2>
+    <main class="contianer mt-5 ml-5 mr-5 md-5">
+        <div class="card">
+            <h1> Hi <%=tca.firstName%>! </h1>
+            <h2>
+                <%= tca.address %>
+            </h2>
+        </div>
+
+        <div>
+            <span>Summary</span>
+        </div>
+
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th class="s1" scope="col">
+                            <%=tca.scenarioone.name%>
+                        </th>
+                        <th scope="col">
+                            <%=tca.scenariotwo.name%>
+                        </th>
+                        <th scope="col">
+                            <%=tca.scenariothree.name%>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
         <p><a href="/tcas/<%=tca._id%>/edit">Update</a></p>
         <p>
         <form action="/tcas/<%=tca._id%>?_method=DELETE" method="POST">

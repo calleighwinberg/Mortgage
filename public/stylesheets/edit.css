@@ -20,14 +20,13 @@ ul {
     padding-left: 1rem;
 }
 
-#product1 {
+
+
+.form {
     display: none;
 }
 
-#closingCosts1 {
+.s1 {
     display: none;
-}
-
-#monthlyCosts1 {
-    display: none;
+    visibility: hidden;
 }

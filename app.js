@@ -47,7 +47,7 @@ app.post('/tcas', async (req, res) => {     //post route to create a new TCA
     res.redirect(`/tcas/${tca._id}/edit`);
 });
 
-app.get('/tcas/:id', async (req, res) => {
+app.get('/tcas/:id', async (req, res) => { //get route to show dislay page 
     const tca = await TCA.findById(req.params.id)
     res.render('tcas/show', { tca });
 })
@@ -57,11 +57,26 @@ app.get('/tcas/:id/edit', async (req, res) => {     //get route to show the edit
     res.render('tcas/edit', { tca });
 })
 
-app.put('/tcas/:id', async(req, res) => {           //put route to update the TCA
+
+/*app.patch('/tcas/:id', async (req, res) => {
+    const { id } = req.params;
+    const update = {};
+    for (const key of Object.keys(req.body)) {
+        if (req.body[key] !== '') {
+            update[key] = req.body[key]
+        }
+    } 
+    console.log(req.body);
+    console.log(update)
+    const tca = await TCA.findByIdAndUpdate(id, {$set: update}, {new:true})
+})*/
+
+app.patch('/tcas/:id', async(req, res) => {           //put route to update the TCA
     const { id } = req.params;
     console.log(req.body);
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
 })
+
 
 app.delete('/tcas/:id', async (req,res) => {
     const { id } = req.params;

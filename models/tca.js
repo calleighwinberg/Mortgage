@@ -12,35 +12,55 @@ const TCASchema = new Schema({
         price: Number,
         downPayment: Number,
         rate: Number,
-        term: Number,
+        term: Number},
+    cc1: {
         aprCosts: Number,
         points: Number,
-        prepaidInterest: Number,
         escrowFees: Number, 
         noAPRcosts: Number, 
-        contribution: Number,
+        contribution: Number},
+    mc1: {
         hoa: Number, 
         hazIns: Number,
         taxes: Number,
-        pmi: Number
-        
-    },
+        pmi: Number},
+
+
     scenariotwo: {
         name: String,
         price: Number,
         downPayment: Number,
         rate: Number,
-        term: Number,
+        term: Number},
+    cc2: {
         aprCosts: Number,
         points: Number,
-        prepaidInterest: Number,
         escrowFees: Number, 
         noAPRcosts: Number, 
+        contribution: Number},
+    mc2: {
         hoa: Number, 
         hazIns: Number,
         taxes: Number,
-        pmi: Number
-    }
+        pmi: Number},
+
+    scenariothree: {
+        name: String,
+        price: Number,
+        downPayment: Number,
+        rate: Number,
+        term: Number},
+    cc3: {
+        aprCosts: Number,
+        points: Number,
+        escrowFees: Number, 
+        noAPRcosts: Number, 
+        contribution: Number},
+    mc3: {
+        hoa: Number, 
+        hazIns: Number,
+        taxes: Number,
+        pmi: Number},
 })
 
 module.exports = mongoose.model('TCA', TCASchema)
