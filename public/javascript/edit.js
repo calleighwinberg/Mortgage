@@ -1,10 +1,10 @@
-const client = document.querySelector('#client');
+/*const client = document.querySelector('#client');
 client.addEventListener('submit', async function(e) {
     //e.preventDefault();
     console.log(tcaID)
-    console.log(client.elements.firstName)
+    //console.log(client.elements.firstName)
     //axios.put(`/tcas/${tcaID}`, client.elements);
-})
+})*/
 
 const allForms = document.getElementsByClassName('form');
 

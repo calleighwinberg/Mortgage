@@ -73,7 +73,7 @@ app.get('/tcas/:id/edit', async (req, res) => {     //get route to show the edit
 
 app.patch('/tcas/:id', async(req, res) => {           //put route to update the TCA
     const { id } = req.params;
-    console.log(req.body);
+    //console.log(req.body);
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
 })
 
