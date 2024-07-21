@@ -1,5 +1,5 @@
 <% layout('layout/boilerplate') %>
-<body onload="computeLoan()">
+<body onload="computeAll()">
     <main class="container mt-5 ml-5 mr-5">
         <div class="card">
             <h1> Hi <%=tca.firstName%>! </h1>
@@ -10,8 +10,8 @@
 
 
         <div class="card">
-            <div>
-                <span>Summary</span>
+            <div class="bg-dark bg-gradient" style="height: 50px">
+                <span><h5 class="text-light">Summary</h5></span>
             </div>
 
             <div>
@@ -27,50 +27,50 @@
                     <tbody>
                         <tr>
                             <th scope="row">Purchase Price</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td id="price1">Mark</td>
+                            <td id="price2">Mark</td>
+                            <td id="price3">Mark</td>
                         </tr>
                         <tr>
                             <th scope="row">Loan Amount:</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td id="loan1">Jacob</td>
+                            <td id="loan2">Jacob</td>
+                            <td id="loan3">Jacob</td>
                         </tr>
                         <tr>
                             <th scope="row">Interest Rate:</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td id="rate1">Larry</td>
+                            <td id="rate2">Larry</td>
+                            <td id="rate3">Larry</td>
                         </tr>
                         <tr>
                             <th scope="row">Term (months): </th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td id="term1">Larry</td>
+                            <td id="term2">Larry</td>
+                            <td id="term3">Larry</td>
                         </tr>
 
 
                         <tr>
                             <th scope="row">Payment</th>
-                            <td id="payment"> </td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td id="payment1"></td>
+                            <td id="payment2"></td>
+                            <td id="payment3"></td>
                         </tr>
 
 
 
                         <tr>
                             <th scope="row">Cash to Close:</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td id="ctc1">Larry</td>
+                            <td id="ctc2">Larry</td>
+                            <td id="ctc3">Larry</td>
                         </tr>
                         <tr>
                             <th scope="row">Monthly Savings:</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td id="difference1">Larry</td>
+                            <td id="difference2">Larry</td>
+                            <td id="difference3">Larry</td>
                         </tr>
                     </tbody>
                 </table>
@@ -88,7 +88,7 @@
             <a href="/tcas">All TCAs</a>
         </footer>
 
-        <script> var tca = `<%= tca %>` </script>
+        <script> const tca = <%- JSON.stringify(tca) %> </script>
         <script src="/javascript/show.js"></script>
         
 
