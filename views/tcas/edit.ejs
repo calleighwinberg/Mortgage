@@ -1,13 +1,28 @@
 <% layout('layout/boilerplate') %>
+<body onload="newDate()">
+    
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <%- include('../partials/sidebar')%>
+
+            <script> var date = document.lastModified </script>
 
                 <div class=" col-6 p-4">
                     <h4>This presentation is for <%=tca.firstName%>
                             <%=tca.lastName%>
                     </h4>
                     <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
+                    <form id="dateForm" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                        target="dummyframe">
+                            <label class="form-label" for="name">date</label>
+                            <input id="newDate" class="form-control" type="text" id="newDate" , name="tca[lastModified]"
+                                value="">
+                        <div class="mb-3">
+                            <button class="btn btn-success"> Save </button>
+                        </div>
+                    </form>
+
                     <form id="client" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST" target="dummyframe">
                         <script> var tcaID = `<%=tca._id%>` </script>
                         <div class="mb-3">
@@ -342,6 +357,8 @@
                 </div>
         </div>
     </div>
+
+</body>
 
     <script> const tca = <%- JSON.stringify(tca) %> </script>
 

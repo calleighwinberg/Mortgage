@@ -1,16 +1,8 @@
-/*const client = document.querySelector('#client');
-client.addEventListener('submit', async function(e) {
-    //e.preventDefault();
-    console.log(tcaID)
-    //console.log(client.elements.firstName)
-    //axios.put(`/tcas/${tcaID}`, client.elements);
-})*/
-
-//let lastModif = document.lastModified ; 
-//console.log(lastModif)
-//tca.lastModified = JSON.stringify(lastModif) ;
-//console.log(tca.lastModified) ;
-//console.log(tca.firstName) ;
+function newDate() {
+    let lastModif = document.lastModified ;
+    document.getElementById('newDate').value = lastModif ;
+    document.getElementById('dateForm').submit() ;
+}
 
 const allForms = document.getElementsByClassName('form');
 
