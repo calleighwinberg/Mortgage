@@ -172,7 +172,72 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Hide this modal and show the first with the button below.
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">
+                                            <%=tca.scenarioone.name%>
+                                        </th>
+                                        <th scope="col">
+                                            <%=tca.scenariotwo.name%>
+                                        </th>
+                                        <th scope="col">
+                                            <%=tca.scenariothree.name%>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Down Payment:</th>
+                                        <td id="d1"></td>
+                                        <td id="d2"></td>
+                                        <td id="d3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Loan To Value:</th>
+                                        <td id="ltv1"></td>
+                                        <td id="ltv2"></td>
+                                        <td id="ltv3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">APR Costs:</th>
+                                        <td id="apr1"></td>
+                                        <td id="apr2"></td>
+                                        <td id="apr3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">non-APR Costs:</th>
+                                        <td id="noApr1"></td>
+                                        <td id="noApr2"></td>
+                                        <td id="noApr3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Points: </th>
+                                        <td id="points1"></td>
+                                        <td id="points2"></td>
+                                        <td id="points3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Prepaids:</th>
+                                        <td id="escrow1"></td>
+                                        <td id="escrow2"></td>
+                                        <td id="escrow3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Contributions:</th>
+                                        <td id="cont1"></td>
+                                        <td id="cont2"></td>
+                                        <td id="cont3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Cash to Close:</th>
+                                        <td id="total1"></td>
+                                        <td id="total2"></td>
+                                        <td id="total3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

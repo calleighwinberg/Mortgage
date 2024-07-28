@@ -30,8 +30,11 @@ function computePITI(pi, taxes, insurance, hoa, mi) {
     return pi+taxes+insurance+hoa+mi
 }
 
-function computeCashToClose(down, loan, aprCosts, points, escrowFees, noAPRcosts, contribution) {
-    points = (points * .01) * loan ;
+function computePoints(points, loan) {
+    return (points * .01) * loan ;
+}
+
+function computeCashToClose(down, aprCosts, points, escrowFees, noAPRcosts, contribution) {
     var ctc = down+aprCosts+points+escrowFees+noAPRcosts-contribution ;
     return ctc ; 
 }
@@ -49,14 +52,17 @@ function computeS1() {
     var piti = computePITI(pi, tca.mc1.hoa, tca.mc1.hazIns, tca.mc1.taxes, tca.mc1.pmi) ;
     document.getElementById('payment1').innerHTML = format(piti) ;
 
-    var ctc = computeCashToClose(tca.scenarioone.downPayment, loan, tca.cc1.aprCosts, tca.cc1.points, 
+    points = computePoints(tca.cc1.points, loan) ;
+    var ctc = computeCashToClose(tca.scenarioone.downPayment, tca.cc1.aprCosts, points, 
             tca.cc1.escrowFees, tca.cc1.noAPRcosts, tca.cc1.contribution) ;
     document.getElementById('ctc1').innerHTML = format(ctc) ; 
 
-    computeS1MoreInfo(pi, piti)
+    computeS1MoreInfo(pi, piti, points, ctc)
 }
 
-function computeS1MoreInfo(pi, piti) {
+function computeS1MoreInfo(pi, piti, points, ctc) {
+
+    //payment breakdown
     document.getElementById('p1').innerHTML = format(checkNull(tca.scenarioone.price)) ;
     document.getElementById('pi1').innerHTML = format(pi) ;
     document.getElementById('ins1').innerHTML = format(checkNull(tca.mc1.hazIns)) ;
@@ -64,7 +70,21 @@ function computeS1MoreInfo(pi, piti) {
     document.getElementById('mi1').innerHTML = format(checkNull(tca.mc1.pmi)) ;
     document.getElementById('hoa1').innerHTML = format(checkNull(tca.mc1.hoa)) ;
     document.getElementById('piti1').innerHTML = format(piti) ;
+
+    //closing costs
+    document.getElementById('d1').innerHTML = format(checkNull(tca.scenarioone.downPayment)) ;
+    document.getElementById('ltv1').innerHTML = checkNull((1-(tca.scenarioone.downPayment/tca.scenarioone.price))*100).toFixed(3).toString() + "%" ;
+    document.getElementById('apr1').innerHTML = format(checkNull(tca.cc1.aprCosts)) ;
+    document.getElementById('noApr1').innerHTML = format(checkNull(tca.cc1.noAPRcosts)) ;
+    document.getElementById('points1').innerHTML = format(checkNull(points)) ;
+    document.getElementById('escrow1').innerHTML = format(checkNull(tca.cc1.escrowFees)) ;
+    document.getElementById('cont1').innerHTML = format(checkNull(tca.cc1.contribution)) ;
+    document.getElementById('total1').innerHTML = format(ctc) ;
+    
+    document.getElementById('hoa1').innerHTML = format(checkNull(tca.mc1.hoa)) ;
+
 }
+
 
 
 
