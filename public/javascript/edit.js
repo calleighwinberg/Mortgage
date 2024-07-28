@@ -8,7 +8,7 @@ client.addEventListener('submit', async function(e) {
 
 const allForms = document.getElementsByClassName('form');
 
-
+//Scenario 1
 const p1 = document.querySelector('#p1');
 p1.addEventListener('click', () => {
     for(let form of allForms) {
@@ -47,6 +47,7 @@ mc1.addEventListener('click', () => {
 })
 
 
+//Secenario 2
 const p2 = document.querySelector('#p2');
 p2.addEventListener('click', () => {
     for(let form of allForms) {
@@ -79,4 +80,41 @@ mc2.addEventListener('click', () => {
     document.getElementById('client').style.display = 'none';
     document.getElementById('monthlyCosts2').style.display = 'block';
 })
+
+
+
+//Scenario 3 
+const p3 = document.querySelector('#p3');
+p3.addEventListener('click', () => {
+    for(let form of allForms) {
+        if (form.id != 'product3') {
+            form.style.display = 'none';
+        }
+    }
+    document.getElementById('client').style.display = 'none';
+    document.getElementById('product3').style.display = 'block';
+})
+
+const cc3 = document.querySelector('#cc3');
+cc3.addEventListener('click', () => {
+    for(let form of allForms) {
+        if (form.id != 'closingCosts3') {
+            form.style.display = 'none';
+        }
+    }
+    document.getElementById('client').style.display = 'none';
+    document.getElementById('closingCosts3').style.display = 'block';
+})
+
+const mc3 = document.querySelector('#mc3');
+mc3.addEventListener('click', () => {
+    for(let form of allForms) {
+        if (form.id != 'monthlyCosts3') {
+            form.style.display = 'none';
+        }
+    }
+    document.getElementById('client').style.display = 'none';
+    document.getElementById('monthlyCosts3').style.display = 'block';
+})
+
 

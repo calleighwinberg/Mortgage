@@ -207,28 +207,25 @@
                 </form>
 
 
-
-
-
-                <form id="product3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST" target="dummyframe">
+                <form id="product3" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST" target="dummyframe">
                     <div>
-                        <label for="name">Product Name</label>
+                        <label class="form-label" for="name">Product Name</label>
                         <input class="form-control" type="text" id="scenarioName" , name="tca[scenariothree][name]"
                             value="<%=tca.scenariothree.name%>">
                     </div>
                     <div>
-                        <label for="name">Price</label>
+                        <label class="form-label" for="name">Price</label>
                         <input class="form-control" type="text" id="scenarioPrice" placeholder="$0.00" name="tca[scenariothree][price]"
                             value="<%=tca.scenariothree.price%>">
                     </div>
                     <div>
-                        <label for="name">Down Payment</label>
+                        <label class="form-label" for="name">Down Payment</label>
                         <input class="form-control" type="text" id="scenarioDownPayment" placeholder="$0.000"
                             name="tca[scenariothree][downPayment]" value="<%=tca.scenariothree.downPayment%>">
                     </div>
                     <div>
-                        <label for="name">Rate</label>
-                        <input  class="form-control" type="text" id="scenarioRate" placeholder="0.000%" name="tca[scenariothree][rate]"
+                        <label class="form-label" for="name">Rate</label>
+                        <input class="form-control" type="text" id="scenarioRate" placeholder="0.000%" name="tca[scenariothree][rate]"
                             value="<%=tca.scenariothree.rate%>">
                     </div>
                     <div>
@@ -243,7 +240,7 @@
                 <form id="closingCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST" target="dummyframe">
                     <div>
                         <label for="name">APR related closing costs</label>
-                        <input type="text" id="scenarioAPRCosts" placeholder="$0.00" name="tca[cc3][aprCosts]"
+                        <input class="form-control" type="text" id="scenarioAPRCosts" placeholder="$0.00" name="tca[cc3][aprCosts]"
                             value="<%=tca.cc3.aprCosts%>">
                     </div>
                     <div>
