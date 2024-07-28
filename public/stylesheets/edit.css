@@ -30,3 +30,15 @@ ul {
     display: none;
     visibility: hidden;
 }
+
+.summary {
+    background-color: #4682B4;
+}
+
+.modal-header {
+    background-color: #4682B4;
+}
+
+.index1 {
+    background-color: #4682B4;
+}

@@ -2,19 +2,22 @@
 
     <body onload="computeAll()">
         <main class="container mt-5 ml-5 mr-5">
-            <div class="card">
-                <h1> Hi <%=tca.firstName%>! </h1>
-                <h2>
+            <div style="margin-bottom: 10px">
+                <h3> Hi <%=tca.firstName%>, </h3>
+                <h5>
                     <%= tca.address %>
-                </h2>
+                </h5>
+                <p1>
+                    <%= tca.description %>
+                </p1>
             </div>
 
 
             <div class="card">
-                <div class="bg-dark bg-gradient d-flex align-items-center" style="height: 60px">
+                <div class=" summary bg-gradient d-flex align-items-center" style="height: 60px">
                     <h5 class="text-light ml-3">Summary</h5>
                     <br>
-                    <button type="button" class="btn btn-primary ml-auto mt-2 mb-2 mr-2 rounded-pill"
+                    <button type="button" class="btn btn-light ml-auto mt-2 mb-2 mr-2 rounded-pill"
                         data-bs-toggle="modal" data-bs-target="#modal"> More Info</button>
 
                 </div>
@@ -82,14 +85,13 @@
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- Modal for payment breakdown -->
             <div class="modal fade" id="modal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
                 tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalToggleLabel">Payment Breakdown</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h5 class="modal-title text-light" id="exampleModalToggleLabel">Payment Breakdown</h5>
                         </div>
                         <div class="modal-body">
                             <table class="table table-striped">
@@ -163,13 +165,13 @@
             </div>
 
 
+            <!-- Modal for closing costs -->
             <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalToggleLabel2">Closing Costs</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h5 class="modal-title text-light" id="exampleModalToggleLabel2">Closing Costs</h5>
                         </div>
                         <div class="modal-body">
                             <table class="table table-striped">
@@ -247,18 +249,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <p><a href="/tcas/<%=tca._id%>/edit">Update</a></p>
-            <p>
-            <form action="/tcas/<%=tca._id%>?_method=DELETE" method="POST">
-                <button>Delete</button>
-            </form>
-            </p>
-            <footer>
-                <a href="/tcas">All TCAs</a>
-            </footer>
-
 
             <script> const tca = <%- JSON.stringify(tca) %> </script>
             <script src="/javascript/show.js"></script>

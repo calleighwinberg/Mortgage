@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const TCA = require('./models/tca');
 const methodOverride = require('method-override');
-const Scenario = require('./models/scenario');
+//const Scenario = require('./models/scenario');
 
 mongoose.connect('mongodb://localhost:27017/mortgage-planning', {
     useNewUrlParser: true,
@@ -73,7 +73,6 @@ app.get('/tcas/:id/edit', async (req, res) => {     //get route to show the edit
 
 app.patch('/tcas/:id', async(req, res) => {           //put route to update the TCA
     const { id } = req.params;
-    //console.log(req.body);
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
 })
 
@@ -84,12 +83,12 @@ app.delete('/tcas/:id', async (req,res) => {
     res.redirect('/tcas');
 })
 
-app.put('/tcas/:id/scenarioone', async(req, res) => {
+/*app.put('/tcas/:id/scenarioone', async(req, res) => {
     //console.log(req.params);
     const { id } = req.params;
     const tca = await TCA.findByIdAndUpdate(id, {...req.body.tca})
     //res.redirect(`/tcas/${tca._id}/edit`)
-})
+})*/
 
 app.listen(3000, ()=> {
     console.log('serving on port 3000')

@@ -6,6 +6,12 @@ client.addEventListener('submit', async function(e) {
     //axios.put(`/tcas/${tcaID}`, client.elements);
 })*/
 
+//let lastModif = document.lastModified ; 
+//console.log(lastModif)
+//tca.lastModified = JSON.stringify(lastModif) ;
+//console.log(tca.lastModified) ;
+//console.log(tca.firstName) ;
+
 const allForms = document.getElementsByClassName('form');
 
 //Scenario 1

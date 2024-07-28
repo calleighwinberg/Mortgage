@@ -5,8 +5,9 @@ const TCASchema = new Schema({
     firstName: String,
     lastName: String,
     address: String,
-    description: String,
-    test: String,
+    lastModified: { type: String, default: "00/00/00" },
+    description: { type: String, default: "Below is your personal Total Cost Analysis for your home loan. Thank you for partnering with our team. " },
+    notes: { type: String, default: "Enter your client notes here:" },
     scenarioone: {
         name: String,
         price: { type: Number, default: 0 },

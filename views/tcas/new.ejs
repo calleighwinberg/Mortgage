@@ -1,122 +1,108 @@
 <% layout('layout/boilerplate') %>
-<div class="container-fluid">
-    <div class="row flex-nowrap">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
 
-        <div class="bg-dark col-auto col-2 min-vh-100 d-flex flex-column justify-content-between">
-            <div class="bg-dark p-2">
-                <a class="d-flex text-decoration-none mt- align-items-center text-light" href="">
-                    <span class="fs-5">SideMenu</span>
-                </a>
-                <ul class="nav nav-pills flex-column mt-4" id="menu">
-                    <li class="nav-item my-1">
-                        <a href="#" class="nav-link text-light">
-                            <i class="bi bi-person-fill"></i>
-                            <span class="fs-4 ms-3 d-none d-sm-inline">Client</span>
-                        </a>
-                    </li>
+            <div class="bg-dark col-auto col-2 min-vh-100 d-flex flex-column justify-content-between">
+                <div class="bg-dark p-2">
+                    <a class="d-flex text-decoration-none mt- align-items-center text-light" href="">
+                        <span class="fs-5">SideMenu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mt-4" id="menu">
+                        <li class="nav-item my-1">
+                            <a href="#" class="nav-link text-light">
+                                <i class="bi bi-person-fill"></i>
+                                <span class="fs-4 ms-3 d-none d-sm-inline">Client</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-item my-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed text-light"
-                            data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true">
-                            <i class="bi bi-file-earmark-text"></i>
-                            <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
-                            <i class="bi bi-caret-down-fill"></i>
-                        </button>
-                        <div class="collapse" id="p1-collapse">
-                            <ul class="btn-toggle-nav  fw-normal pb-1 ">
-                                <li class="nav-item my-1">
-                                    <a href="#" class="nav-link text-light">
+                        <li class="nav-item my-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed text-light"
+                                data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true">
+                                <i class="bi bi-file-earmark-text"></i>
+                                <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
+                                <i class="bi bi-caret-down-fill"></i>
+                            </button>
+                            <div class="collapse" id="p1-collapse">
+                                <ul class="btn-toggle-nav  fw-normal pb-1 ">
+                                    <li class="nav-item my-1">
+                                        <a href="#" class="nav-link text-light">
 
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item my-1">
-                                    <a href="#" class="nav-link text-light">
+                                            <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item my-1">
+                                        <a href="#" class="nav-link text-light">
 
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Monthly Costs</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="nav-item my-1">
-                        <button class="btn btn-toggle align-items-center rounded collapsed text-light"
-                            data-bs-toggle="collapse" data-bs-target="#p2-collapse" aria-expanded="true">
-                            <i class="bi bi-file-earmark-text"></i>
-                            <span class="fs-4 ms-3 d-none d-sm-inline">Product 2</span>
-                            <i class="bi bi-caret-down-fill"></i>
-                        </button>
-                        <div class="collapse" id="p2-collapse">
-                            <ul class="btn-toggle-nav  fw-normal pb-1 ">
-                                <li class="nav-item my-1">
-                                    <a href="#" class="nav-link text-light">
-
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item my-1">
-                                    <a href="#" class="nav-link text-light">
-
-                                        <span class="fs-4 ms-3 d-none d-sm-inline">Monthly Costs</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                                            <span class="fs-4 ms-3 d-none d-sm-inline">Monthly Costs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
 
-                    <li class="nav-item my-1">
-                        <a href="#" class="nav-link text-light">
-                            <i class="bi bi-file-earmark-text"></i>
-                            <span class="fs-4 ms-3 d-none d-sm-inline">Add Product</span>
-                        </a>
-                    </li>
-                </ul>
+                        <li class="nav-item my-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed text-light"
+                                data-bs-toggle="collapse" data-bs-target="#p2-collapse" aria-expanded="true">
+                                <i class="bi bi-file-earmark-text"></i>
+                                <span class="fs-4 ms-3 d-none d-sm-inline">Product 2</span>
+                                <i class="bi bi-caret-down-fill"></i>
+                            </button>
+                            <div class="collapse" id="p2-collapse">
+                                <ul class="btn-toggle-nav  fw-normal pb-1 ">
+                                    <li class="nav-item my-1">
+                                        <a href="#" class="nav-link text-light">
+
+                                            <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item my-1">
+                                        <a href="#" class="nav-link text-light">
+
+                                            <span class="fs-4 ms-3 d-none d-sm-inline">Monthly Costs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item my-1">
+                            <a href="#" class="nav-link text-light">
+                                <i class="bi bi-file-earmark-text"></i>
+                                <span class="fs-4 ms-3 d-none d-sm-inline">Add Product</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
 
 
 
-        <div class=" col-6 p-4">
-            <div class="row">
-                <h2>New Financing Analysis</h1>
-                    <form action="/tcas" method="POST">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">First Name</label>
-                            <input class="form-control" type="text" id="firstName" , name="tca[firstName]">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Last Name</label>
-                            <input class="form-control" type="text" id="lastName" , name="tca[lastName]">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Address</label>
-                            <input class="form-control" type="text" id="address" , name="tca[address]">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="description">Description</label>
-                            <input class="form-control" type="text" id="description" , name="tca[description]">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
-            </div>
-        </div>
-
-        <div class="col-4 p-4 card bg-light">
-            <div class="row mr-3 mt-5">
-                <div class="">
-                    <h4>Notes</h1>
+            <div class=" col-6 p-4">
+                <div class="row">
+                    <h2>New Financing Analysis</h1>
                         <form action="/tcas" method="POST">
                             <div class="mb-3">
-                            
-                                <textarea class="form-control" type="text" id="notes" name=" "
-                                placeholder="Enter notes for your client here: " name="notes" id="notes" cols="30" rows="10"></textarea>
+                                <label class="form-label" for="name">First Name</label>
+                                <input class="form-control" type="text" id="firstName" , name="tca[firstName]">
                             </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Last Name</label>
+                                <input class="form-control" type="text" id="lastName" , name="tca[lastName]">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Address</label>
+                                <input class="form-control" type="text" id="address" , name="tca[address]">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="description">Description</label>
+                                <textarea class="form-control" type="text" id="description" name="tca[description]"
+                                    cols="30"
+                                    rows="5">Below is your personal Total Cost Analysis for your home loan. Thank you for partnering with our team.</textarea>
+                            </div>
+
                             <div class="mb-3">
                                 <button class="btn btn-success"> Save </button>
                             </div>
@@ -125,4 +111,3 @@
             </div>
         </div>
     </div>
-</div>
