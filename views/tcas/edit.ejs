@@ -1,365 +1,386 @@
 <% layout('layout/boilerplate') %>
-<body onload="newDate()">
-    
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <%- include('../partials/sidebar')%>
 
-            <script> var date = document.lastModified </script>
+    <body onload="newDate()">
 
-                <div class=" col-6 p-4">
-                    <h4>This presentation is for <%=tca.firstName%>
-                            <%=tca.lastName%>
-                    </h4>
-                    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 
-                    <form id="dateForm" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                <%- include('../partials/sidebar')%>
+
+
+                    <div class=" col-6 p-4">
+                        <h4>This presentation is for <%=tca.firstName%>
+                                <%=tca.lastName%>
+                        </h4>
+
+                        <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
+                        <form id="dateForm" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
                             <label class="form-label" for="name">date</label>
-                            <input id="newDate" class="form-control" type="text" id="newDate" , name="tca[lastModified]"
+                            <input id="newDate" class="form-control" type="text" id="newDate" name="tca[lastModified]"
                                 value="">
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
 
-                    <form id="client" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST" target="dummyframe">
-                        <script> var tcaID = `<%=tca._id%>` </script>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">First Name</label>
-                            <input class="form-control" type="text" id="firstName" , name="tca[firstName]"
-                                value="<%=tca.firstName%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Last Name</label>
-                            <input class="form-control" type="text" id="lastName" , name="tca[lastName]"
-                                value="<%=tca.lastName%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Address</label>
-                            <input class="form-control" type="text" id="address" , name="tca[address]"
-                                value="<%=tca.address%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="description">Description</label>
-                            <textarea class="form-control" type="text" id="description" name="tca[description]"
-                                cols="30" rows="5"> <%=tca.description%> </textarea>
-                        </div>
-                        <div class="mb-3 d-flex align-items-center">
-                            <button class="btn btn-success"> Save </button>
-                            <form action="/tcas/<%=tca._id%>?_method=DELETE" method="POST">
-                                    <button type="button" class="ml-auto btn btn-danger">Delete </button> 
+                        <form id="client" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST" target="dummyframe">
+                            <script> var tcaID = `<%=tca._id%>` </script>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">First Name</label>
+                                <input class="form-control" type="text" id="firstName" , name="tca[firstName]"
+                                    value="<%=tca.firstName%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Last Name</label>
+                                <input class="form-control" type="text" id="lastName" , name="tca[lastName]"
+                                    value="<%=tca.lastName%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Address</label>
+                                <input class="form-control" type="text" id="address" , name="tca[address]"
+                                    value="<%=tca.address%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="description">Description</label>
+                                <textarea class="form-control" type="text" id="description" name="tca[description]"
+                                    cols="30" rows="2"> <%=tca.description%> </textarea>
+                            </div>
+                            <div class="mb-3 d-flex align-items-center">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
+
+                        <div>
+                            <form id="delete" action="/tcas/<%=tca._id%>?_method=DELETE" method="POST">
+                                <button style="float:right;" class=" ml-auto mb-auto btn btn-danger btn-sm">Delete
+                                    Client</button>
                             </form>
                         </div>
-                    </form>
-
-                    <form id="product1" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Product Name</label>
-                            <input class="form-control" type="text" id="scenarioName" , name="tca[scenarioone][name]"
-                                value="<%=tca.scenarioone.name%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Price</label>
-                            <input class="form-control" type="text" id="scenarioPrice" placeholder="$0.00"
-                                name="tca[scenarioone][price]" value="<%=tca.scenarioone.price%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Down Payment</label>
-                            <input class="form-control" type="text" id="scenarioDownPayment" placeholder="$0.000"
-                                name="tca[scenarioone][downPayment]" value="<%=tca.scenarioone.downPayment%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Rate</label>
-                            <input class="form-control" type="text" id="scenarioRate" placeholder="0.000%"
-                                name="tca[scenarioone][rate]" value="<%=tca.scenarioone.rate%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Term</label>
-                            <input class="form-control" type="text" id="scenarioTerm" placeholder="0"
-                                name="tca[scenarioone][term]" value="<%=tca.scenarioone.term%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
 
 
-                    <form id="closingCosts1" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">APR related closing costs</label>
-                            <input class="form-control" type="text" id="scenarioAPRCosts" placeholder="$0.00"
-                                name="tca[cc1][aprCosts]" value="<%=tca.cc1.aprCosts%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Points</label>
-                            <input class="form-control" type="text" id="scenarioPoints" placeholder="0.000%"
-                                name="tca[cc1][points]" value="<%=tca.cc1.points%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Prepaid Escrows</label>
-                            <input class="form-control" type="text" id="scenarioEscrow" placeholder="$0.00"
-                                name="tca[cc1][escrowFees]" value="<%=tca.cc1.escrowFees%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Non-APR Costs</label>
-                            <input class="form-control" type="text" id="scenarioAPR" placeholder="$0.00"
-                                name="tca[cc1][noAPRcosts]" value="<%=tca.cc1.noAPRcosts%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Contributions</label>
-                            <input class="form-control" type="text" id="scenarioContribution" placeholder="$0.00"
-                                name="tca[cc1][contribution]" value="<%=tca.cc1.contribution%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
-
-                    <form id="monthlyCosts1" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">HOA dues</label>
-                            <input class="form-control" type="text" id="scenarioHoa" placeholder="$0.00"
-                                name="tca[mc1][hoa]" value="<%=tca.mc1.hoa%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Hazard Insurance Amount</label>
-                            <input class="form-control" type="text" id="scenarioHazIns" placeholder="$0.00"
-                                name="tca[mc1][hazIns]" value="<%=tca.mc1.hazIns%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Property Tax Amount</label>
-                            <input class="form-control" type="text" id="scenarioTaxes" placeholder="0.00%"
-                                name="tca[mc1][taxes]" value="<%=tca.mc1.taxes%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Mortgage Insurance Amount</label>
-                            <input class="form-control" type="text" id="scenarioPMI" placeholder="0.00%"
-                                name="tca[mc1][pmi]" value="<%=tca.mc1.pmi%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
+                        <form id="product1" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Product Name</label>
+                                <input class="form-control" type="text" id="scenarioName" ,
+                                    name="tca[scenarioone][name]" value="<%=tca.scenarioone.name%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Price</label>
+                                <input class="currency form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioPrice" placeholder="$0.00" name="tca[scenarioone][price]"
+                                    value="<%=tca.scenarioone.price%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Down Payment</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioDownPayment" placeholder="$0.000" name="tca[scenarioone][downPayment]"
+                                    value="<%=tca.scenarioone.downPayment%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Rate</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioRate"
+                                    placeholder="0.000%" name="tca[scenarioone][rate]"
+                                    value="<%=tca.scenarioone.rate%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Term</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioTerm"
+                                    placeholder="0" name="tca[scenarioone][term]" value="<%=tca.scenarioone.term%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
 
 
+                        <form id="closingCosts1" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">APR related closing costs</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioAPRCosts" placeholder="$0.00" name="tca[cc1][aprCosts]"
+                                    value="<%=tca.cc1.aprCosts%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Points</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioPoints"
+                                    placeholder="0.000%" name="tca[cc1][points]" value="<%=tca.cc1.points%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Prepaid Escrows</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioEscrow"
+                                    placeholder="$0.00" name="tca[cc1][escrowFees]" value="<%=tca.cc1.escrowFees%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Non-APR Costs</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioAPR"
+                                    placeholder="$0.00" name="tca[cc1][noAPRcosts]" value="<%=tca.cc1.noAPRcosts%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Contributions</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioContribution" placeholder="$0.00" name="tca[cc1][contribution]"
+                                    value="<%=tca.cc1.contribution%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
+
+                        <form id="monthlyCosts1" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">HOA dues</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioHoa"
+                                    placeholder="$0.00" name="tca[mc1][hoa]" value="<%=tca.mc1.hoa%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Hazard Insurance Amount</label>
+                                <input class="form-control" type="text" id="scenarioHazIns" placeholder="$0.00"
+                                    name="tca[mc1][hazIns]" value="<%=tca.mc1.hazIns%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Property Tax Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioTaxes"
+                                    placeholder="0.00%" name="tca[mc1][taxes]" value="<%=tca.mc1.taxes%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Mortgage Insurance Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioPMI"
+                                    placeholder="0.00%" name="tca[mc1][pmi]" value="<%=tca.mc1.pmi%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
 
 
 
-                    <form id="product2" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Product Name</label>
-                            <input class="form-control" type="text" id="scenarioName" , name="tca[scenariotwo][name]"
-                                value="<%=tca.scenariotwo.name%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Price</label>
-                            <input class="form-control" type="text" id="scenarioPrice" placeholder="$0.00"
-                                name="tca[scenariotwo][price]" value="<%=tca.scenariotwo.price%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Down Payment</label>
-                            <input class="form-control" type="text" id="scenarioDownPayment" placeholder="$0.000"
-                                name="tca[scenariotwo][downPayment]" value="<%=tca.scenariotwo.downPayment%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Rate</label>
-                            <input class="form-control" type="text" id="scenarioRate" placeholder="0.000%"
-                                name="tca[scenariotwo][rate]" value="<%=tca.scenariotwo.rate%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Term</label>
-                            <input class="form-control" type="text" id="scenarioTerm" placeholder="0"
-                                name="tca[scenariotwo][term]" value="<%=tca.scenariotwo.term%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
 
 
-                    <form id="closingCosts2" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">APR related closing costs</label>
-                            <input class="form-control" type="text" id="scenarioAPRCosts" placeholder="$0.00"
-                                name="tca[cc2][aprCosts]" value="<%=tca.cc2.aprCosts%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Points</label>
-                            <input class="form-control" type="text" id="scenarioPoints" placeholder="0.000%"
-                                name="tca[cc2][points]" value="<%=tca.cc2.points%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Prepaid Escrows</label>
-                            <input class="form-control" type="text" id="scenarioEscrow" placeholder="$0.00"
-                                name="tca[cc2][escrowFees]" value="<%=tca.cc2.escrowFees%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Non-APR Costs</label>
-                            <input class="form-control" type="text" id="scenarioAPR" placeholder="$0.00"
-                                name="tca[cc2][noAPRcosts]" value="<%=tca.cc2.noAPRcosts%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Contributions</label>
-                            <input class="form-control" type="text" id="scenarioContribution" placeholder="$0.00"
-                                name="tca[cc2][contribution]" value="<%=tca.cc2.contribution%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
-
-                    <form id="monthlyCosts2" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">HOA dues</label>
-                            <input class="form-control" type="text" id="scenarioHoa" placeholder="$0.00"
-                                name="tca[mc2][hoa]" value="<%=tca.mc2.hoa%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Hazard Insurance Amount</label>
-                            <input class="form-control" type="text" id="scenarioHazIns" placeholder="$0.00"
-                                name="tca[mc2][hazIns]" value="<%=tca.mc2.hazIns%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Property Tax Amount</label>
-                            <input class="form-control" type="text" id="scenarioTaxes" placeholder="0.00%"
-                                name="tca[mc2][taxes]" value="<%=tca.mc2.taxes%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Mortgage Insurance Amount</label>
-                            <input class="form-control" type="text" id="scenarioPMI" placeholder="0.00%"
-                                name="tca[mc2][pmi]" value="<%=tca.mc2.pmi%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
+                        <form id="product2" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Product Name</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioName" ,
+                                    name="tca[scenariotwo][name]" value="<%=tca.scenariotwo.name%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Price</label>
+                                <input class=" currency form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioPrice" placeholder="$0.00" name="tca[scenariotwo][price]"
+                                    value="<%=tca.scenariotwo.price%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Down Payment</label>
+                                <input class="form-control" type="text" id="scenarioDownPayment" placeholder="$0.000"
+                                    name="tca[scenariotwo][downPayment]" value="<%=tca.scenariotwo.downPayment%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Rate</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioRate"
+                                    placeholder="0.000%" name="tca[scenariotwo][rate]"
+                                    value="<%=tca.scenariotwo.rate%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Term</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioTerm"
+                                    placeholder="0" name="tca[scenariotwo][term]" value="<%=tca.scenariotwo.term%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
 
 
-                    <form id="product3" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Product Name</label>
-                            <input class="form-control" type="text" id="scenarioName" , name="tca[scenariothree][name]"
-                                value="<%=tca.scenariothree.name%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Price</label>
-                            <input class="form-control" type="text" id="scenarioPrice" placeholder="$0.00"
-                                name="tca[scenariothree][price]" value="<%=tca.scenariothree.price%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Down Payment</label>
-                            <input class="form-control" type="text" id="scenarioDownPayment" placeholder="$0.000"
-                                name="tca[scenariothree][downPayment]" value="<%=tca.scenariothree.downPayment%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Rate</label>
-                            <input class="form-control" type="text" id="scenarioRate" placeholder="0.000%"
-                                name="tca[scenariothree][rate]" value="<%=tca.scenariothree.rate%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Term</label>
-                            <input class="form-control" type="text" id="scenarioTerm" placeholder="0"
-                                name="tca[scenariothree][term]" value="<%=tca.scenariothree.term%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
+                        <form id="closingCosts2" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">APR related closing costs</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioAPRCosts" placeholder="$0.00" name="tca[cc2][aprCosts]"
+                                    value="<%=tca.cc2.aprCosts%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Points</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioPoints"
+                                    placeholder="0.000%" name="tca[cc2][points]" value="<%=tca.cc2.points%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Prepaid Escrows</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioEscrow"
+                                    placeholder="$0.00" name="tca[cc2][escrowFees]" value="<%=tca.cc2.escrowFees%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Non-APR Costs</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioAPR"
+                                    placeholder="$0.00" name="tca[cc2][noAPRcosts]" value="<%=tca.cc2.noAPRcosts%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Contributions</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioContribution" placeholder="$0.00" name="tca[cc2][contribution]"
+                                    value="<%=tca.cc2.contribution%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
+
+                        <form id="monthlyCosts2" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">HOA dues</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioHoa"
+                                    placeholder="$0.00" name="tca[mc2][hoa]" value="<%=tca.mc2.hoa%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Hazard Insurance Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioHazIns"
+                                    placeholder="$0.00" name="tca[mc2][hazIns]" value="<%=tca.mc2.hazIns%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Property Tax Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioTaxes"
+                                    placeholder="0.00%" name="tca[mc2][taxes]" value="<%=tca.mc2.taxes%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Mortgage Insurance Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioPMI"
+                                    placeholder="0.00%" name="tca[mc2][pmi]" value="<%=tca.mc2.pmi%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
 
 
-                    <form id="closingCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">APR related closing costs</label>
-                            <input class="form-control" type="text" id="scenarioAPRCosts" placeholder="$0.00"
-                                name="tca[cc3][aprCosts]" value="<%=tca.cc3.aprCosts%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Points</label>
-                            <input class="form-control" type="text" id="scenarioPoints" placeholder="0.000%"
-                                name="tca[cc3][points]" value="<%=tca.cc3.points%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Prepaid Escrows</label>
-                            <input class="form-control" type="text" id="scenarioEscrow" placeholder="$0.00"
-                                name="tca[cc3][escrowFees]" value="<%=tca.cc3.escrowFees%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Non-APR Costs</label>
-                            <input class="form-control" type="text" id="scenarioAPR" placeholder="$0.00"
-                                name="tca[cc3][noAPRcosts]" value="<%=tca.cc3.noAPRcosts%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Contributions</label>
-                            <input class="form-control" type="text" id="scenarioContribution" placeholder="$0.00"
-                                name="tca[cc3][contribution]" value="<%=tca.cc3.contribution%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
+                        <form id="product3" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Product Name</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioName" ,
+                                    name="tca[scenariothree][name]" value="<%=tca.scenariothree.name%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Price</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioPrice"
+                                    placeholder="$0.00" name="tca[scenariothree][price]"
+                                    value="<%=tca.scenariothree.price%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Down Payment</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioDownPayment" placeholder="$0.000" name="tca[scenariothree][downPayment]"
+                                    value="<%=tca.scenariothree.downPayment%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Rate</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioRate"
+                                    placeholder="0.000%" name="tca[scenariothree][rate]"
+                                    value="<%=tca.scenariothree.rate%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Term</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioTerm"
+                                    placeholder="0" name="tca[scenariothree][term]" value="<%=tca.scenariothree.term%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
 
-                    <form id="monthlyCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST"
-                        target="dummyframe">
-                        <div class="mb-3">
-                            <label class="form-label" for="name">HOA dues</label>
-                            <input class="form-control" type="text" id="scenarioHoa" placeholder="$0.00"
-                                name="tca[mc3][hoa]" value="<%=tca.mc3.hoa%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Hazard Insurance Amount</label>
-                            <input class="form-control" type="text" id="scenarioHazIns" placeholder="$0.00"
-                                name="tca[mc3][hazIns]" value="<%=tca.mc3.hazIns%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Property Tax Amount</label>
-                            <input class="form-control" type="text" id="scenarioTaxes" placeholder="0.00%"
-                                name="tca[mc3][taxes]" value="<%=tca.mc3.taxes%>">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Mortgage Insurance Amount</label>
-                            <input class="form-control" type="text" id="scenarioPMI" placeholder="0.00%"
-                                name="tca[mc3][pmi]" value="<%=tca.mc3.pmi%>">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-success"> Save </button>
-                        </div>
-                    </form>
-                </div>
 
-                <div class="col-4 p-4 card bg-light">
-                    <div class="row mr-3 mt-5">
-                        <div class="">
-                            <form id="notesSection" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
-                                target="dummyframe">
-                                <div class="mb-3">
-                                    <label class="form-label" for="notes">
-                                        <h4>Notes</h4>
-                                    </label>
-                                    <textarea class="form-control" type="text" id="notes" name="tca[notes]" cols="30"
-                                        rows="10"><%=tca.notes%></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <button class="btn btn-success"> Save </button>
-                                </div>
-                            </form>
+                        <form id="closingCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">APR related closing costs</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioAPRCosts" placeholder="$0.00" name="tca[cc3][aprCosts]"
+                                    value="<%=tca.cc3.aprCosts%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Points</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioPoints"
+                                    placeholder="0.000%" name="tca[cc3][points]" value="<%=tca.cc3.points%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Prepaid Escrows</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioEscrow"
+                                    placeholder="$0.00" name="tca[cc3][escrowFees]" value="<%=tca.cc3.escrowFees%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Non-APR Costs</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$ " id="scenarioAPR"
+                                    placeholder="$0.00" name="tca[cc3][noAPRcosts]" value="<%=tca.cc3.noAPRcosts%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Contributions</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
+                                    id="scenarioContribution" placeholder="$0.00" name="tca[cc3][contribution]"
+                                    value="<%=tca.cc3.contribution%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
 
+                        <form id="monthlyCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST"
+                            target="dummyframe">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">HOA dues</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioHoa"
+                                    placeholder="$0.00" name="tca[mc3][hoa]" value="<%=tca.mc3.hoa%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Hazard Insurance Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioHazIns"
+                                    placeholder="$0.00" name="tca[mc3][hazIns]" value="<%=tca.mc3.hazIns%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Property Tax Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioTaxes"
+                                    placeholder="0.00%" name="tca[mc3][taxes]" value="<%=tca.mc3.taxes%>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Mortgage Insurance Amount</label>
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioPMI"
+                                    placeholder="0.00%" name="tca[mc3][pmi]" value="<%=tca.mc3.pmi%>">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success"> Save </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-4 p-4 card bg-light">
+                        <div class="row mr-3 mt-5">
+                            <div class="">
+                                <form id="notesSection" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
+                                    target="dummyframe">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="notes">
+                                            <h4>Notes</h4>
+                                        </label>
+                                        <textarea class="form-control" type="text" id="notes" name="tca[notes]"
+                                            cols="30" rows="10"><%=tca.notes%></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button class="btn btn-success"> Save </button>
+                                    </div>
+                                </form>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+            </div>
         </div>
-    </div>
 
-</body>
+    </body>
 
-    <script> const tca = <%- JSON.stringify(tca) %> </script>
+    <script> const tca = <% - JSON.stringify(tca) %> </script>
 
     <script src="/javascript/edit.js"></script>

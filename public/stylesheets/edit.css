@@ -32,7 +32,19 @@ ul {
 }
 
 .summary {
-    background-color: #4682B4;
+    background-color: black;
+    border: 3px;
+    
+
+}
+
+#moreInfo {
+    
+    border: 3px;
+    outline-width: medium;
+    outline-style: solid;
+    outline-color: #ff8080;
+
 }
 
 .modal-header {
@@ -40,5 +52,19 @@ ul {
 }
 
 .index1 {
-    background-color: #4682B4;
+    border: 3px;
+    outline-width: thin;
+    outline-style: solid;
+    outline-color: #ff8080;
+    background-color: #f8f9fa;
 }
+
+.clientPres {
+    color: #ff8080;
+}
+
+.icon {
+    color: #ff8080;
+}
+
+

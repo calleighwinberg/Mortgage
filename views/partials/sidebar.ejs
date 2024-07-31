@@ -1,12 +1,15 @@
 <div class="bg-dark col-auto col-2 min-vh-100 d-flex flex-column justify-content-between">
     <div class="bg-dark p-2">
-        <a class="d-flex text-decoration-none mt- align-items-center text-light" href="">
-            <span class="fs-5">SideMenu</span>
-        </a>
+        <div class=" d-flex text-decoration-none mt- align-items-center text-light" href="">
+            <span class="fs-5">This presentation is for
+                <br>
+                <p class="clientPres font-weight-bold" ><%=tca.firstName%> <%=tca.lastName%></p></span>
+            
+        </div>
         <ul class="nav nav-pills flex-column mt-4" id="menu">
             <li class="nav-item my-1">
                 <a href="/tcas/<%=tca._id%>/edit" class="nav-link text-light">
-                    <i class="bi bi-person-fill"></i>
+                    <i class=" icon bi bi-person-fill"></i>
                     <span class="fs-4 ms-3 d-none d-sm-inline">Client</span>
                 </a>
             </li>
@@ -17,13 +20,13 @@
                     class="btn btn-toggle btn-block text-left rounded collapsed text-light"
                     data-bs-toggle="collapse" data-bs-target="#p1-collapse" aria-expanded="true"
                     role="button">
-                    <i class="bi bi-file-earmark-text"></i>
+                    <i class=" icon bi bi-file-earmark-text"></i>
                     <span class="fs-4 ms-3 d-none d-sm-inline">Product 1</span>
-                    <i class="bi bi-caret-down-fill"></i>
+                    <i class=" bi bi-caret-down-fill" ></i>
                 </button>
                 <div class="collapse" id="p1-collapse">
                     <ul class="btn-toggle-nav  fw-normal pb-1 ">
-                        <li class="nav-item my-1">
+                        <li class="nav-item my-1" >
                             <button id="cc1"
                                 class="btn btn-block text-left  rounded collapsed text-light">
                                 <span class="fs-4 ms-3 d-none d-sm-inline">Closing Costs</span>
@@ -43,7 +46,7 @@
                     class="btn btn-toggle btn-block text-left rounded collapsed text-light"
                     data-bs-toggle="collapse" data-bs-target="#p2-collapse" aria-expanded="true"
                     role="button">
-                    <i class="bi bi-file-earmark-text"></i>
+                    <i class=" icon bi bi-file-earmark-text"></i>
                     <span class="fs-4 ms-3 d-none d-sm-inline">Product 2</span>
                     <i class="bi bi-caret-down-fill"></i>
             </button>
@@ -70,7 +73,7 @@
                     class="btn btn-toggle btn-block text-left rounded collapsed text-light"
                     data-bs-toggle="collapse" data-bs-target="#p3-collapse" aria-expanded="true"
                     role="button">
-                    <i class="bi bi-file-earmark-text"></i>
+                    <i class=" icon bi bi-file-earmark-text"></i>
                     <span class="fs-4 ms-3 d-none d-sm-inline">Product 3</span>
                     <i class="bi bi-caret-down-fill"></i>
                 </button>
@@ -93,7 +96,7 @@
             </li>
             <li class="nav-item my-1">
                 <a href="/tcas/<%=tca._id%>" class="nav-link text-light">
-                    <i class="bi bi-easel"></i>
+                    <i class=" icon bi bi-easel"></i>
                     <span class="fs-4 ms-3 d-none d-sm-inline">Presentation View</span>
                 </a>
             </li>

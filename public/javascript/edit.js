@@ -2,6 +2,7 @@ function newDate() {
     let lastModif = document.lastModified ;
     document.getElementById('newDate').value = lastModif ;
     document.getElementById('dateForm').submit() ;
+    //formatCurrency();
 }
 
 const allForms = document.getElementsByClassName('form');
@@ -15,6 +16,7 @@ p1.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('product1').style.display = 'block';
 
 })
@@ -27,6 +29,7 @@ cc1.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('closingCosts1').style.display = 'block';
     
 })
@@ -39,6 +42,7 @@ mc1.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('monthlyCosts1').style.display = 'block';
 
     
@@ -54,6 +58,7 @@ p2.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('product2').style.display = 'block';
 })
 
@@ -65,6 +70,7 @@ cc2.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('closingCosts2').style.display = 'block';
 })
 
@@ -76,6 +82,7 @@ mc2.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('monthlyCosts2').style.display = 'block';
 })
 
@@ -90,6 +97,7 @@ p3.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('product3').style.display = 'block';
 })
 
@@ -101,6 +109,7 @@ cc3.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('closingCosts3').style.display = 'block';
 })
 
@@ -112,7 +121,19 @@ mc3.addEventListener('click', () => {
         }
     }
     document.getElementById('client').style.display = 'none';
+    document.getElementById('delete').style.display = 'none';
     document.getElementById('monthlyCosts3').style.display = 'block';
 })
+
+
+/*const allInputDollar = document.getElementsByClassName('currency');
+
+function formatCurrency() {
+    for(let input of allInputDollar) {
+        console.log(input.value)
+        input.value = "$" + (input.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+}*/
+
 
 

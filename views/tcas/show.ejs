@@ -4,7 +4,7 @@
         <main class="container mt-5 ml-5 mr-5">
             <div style="margin-bottom: 10px">
                 <h3> Hi <%=tca.firstName%>, </h3>
-                <h5>
+                <h5 style="color: #ff8080;">
                     <%= tca.address %>
                 </h5>
                 <p1>
@@ -13,11 +13,11 @@
             </div>
 
 
-            <div class="card">
+            <div class="card mb-3">
                 <div class=" summary bg-gradient d-flex align-items-center" style="height: 60px">
                     <h5 class="text-light ml-3">Summary</h5>
                     <br>
-                    <button type="button" class="btn btn-light ml-auto mt-2 mb-2 mr-2 rounded-pill"
+                    <button type="button" id="moreInfo" class="btn btn-light ml-auto mt-2 mb-2 mr-2 rounded-pill"
                         data-bs-toggle="modal" data-bs-target="#modal"> More Info</button>
 
                 </div>
@@ -90,7 +90,7 @@
                 tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header" style="background-color: black;">
                             <h5 class="modal-title text-light" id="exampleModalToggleLabel">Payment Breakdown</h5>
                         </div>
                         <div class="modal-body">
@@ -157,7 +157,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                            <button class="btn text-light" style="background-color: #ff8080;" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                                 data-bs-dismiss="modal">Closing Costs</button>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                 aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header" style="background-color: black;">
                             <h5 class="modal-title text-light" id="exampleModalToggleLabel2">Closing Costs</h5>
                         </div>
                         <div class="modal-body">
@@ -243,7 +243,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" data-bs-target="#modal" data-bs-toggle="modal"
+                            <button class="btn text-light" style="background-color: #ff8080;" data-bs-target="#modal" data-bs-toggle="modal"
                                 data-bs-dismiss="modal">Payment Breakdown</button>
                         </div>
                     </div>
@@ -252,7 +252,6 @@
 
             <script> const tca = <%- JSON.stringify(tca) %> </script>
             <script src="/javascript/show.js"></script>
-
 
         </main>
     </body>
