@@ -59,7 +59,8 @@
                             <div class="mb-3">
                                 <label class="form-label" for="description">Description</label>
                                 <textarea class="form-control" type="text" id="description" name="tca[description]"
-                                    cols="30" rows="5" required >Below is your personal Total Cost Analysis for your home loan. Thank you for partnering with our team.</textarea>
+                                    cols="30" rows="5"
+                                    required>Below is your personal Total Cost Analysis for your home loan. Thank you for partnering with our team.</textarea>
                             </div>
                             <div class="mb-3">
                                 <button class="btn btn-success"> Save </button>
@@ -72,24 +73,3 @@
 
     <script src="/javascript/new.js"></script>
 
-    <script>
-        (function () {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.validated-form')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
-    </script>

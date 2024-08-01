@@ -14,7 +14,7 @@ const p3 = document.querySelector('#p3');
 p3.addEventListener('click', () => {
     alert("Please complete client information to continue")
 
-})
+}) ;
 
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields

@@ -1,14 +1,12 @@
 <% layout('layout/boilerplate') %>
 
     <body onload="newDate()">
-
-
         <div class="container-fluid">
             <div class="row flex-nowrap">
                 <%- include('../partials/sidebar')%>
 
-
                     <div class=" col-6 p-4">
+                        <%- include('../partials/flash')%>
                         <h4>This presentation is for <%=tca.firstName%>
                                 <%=tca.lastName%>
                         </h4>
@@ -64,7 +62,7 @@
                             target="dummyframe">
                             <div class="mb-3">
                                 <label class="form-label" for="name">Product Name</label>
-                                <input class="form-control" type="text" id="scenarioName" ,
+                                <input class="form-control" type="text" id="scenarioName"
                                     name="tca[scenarioone][name]" value="<%=tca.scenarioone.name%>">
                             </div>
                             <div class="mb-3">
@@ -165,7 +163,7 @@
                             target="dummyframe">
                             <div class="mb-3">
                                 <label class="form-label" for="name">Product Name</label>
-                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioName" ,
+                                <input class="form-control" type="text"  id="scenarioName"
                                     name="tca[scenariotwo][name]" value="<%=tca.scenariotwo.name%>">
                             </div>
                             <div class="mb-3">
@@ -262,7 +260,7 @@
                             target="dummyframe">
                             <div class="mb-3">
                                 <label class="form-label" for="name">Product Name</label>
-                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioName" ,
+                                <input class="form-control" type="text" id="scenarioName"
                                     name="tca[scenariothree][name]" value="<%=tca.scenariothree.name%>">
                             </div>
                             <div class="mb-3">

@@ -57,6 +57,14 @@ ul {
     background-color: #f8f9fa;
 }
 
+.regButton {
+    border: 3px;
+    outline-width: medium;
+    outline-style: solid;
+    outline-color: #ff8080;
+    background-color: black;
+}
+
 .clientPres {
     color: #ff8080;
 }
