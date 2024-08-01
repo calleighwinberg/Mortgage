@@ -38,13 +38,11 @@ ul {
 
 }
 
-#moreInfo {
-    
+#moreInfo {  
     border: 3px;
     outline-width: medium;
     outline-style: solid;
     outline-color: #ff8080;
-
 }
 
 .modal-header {

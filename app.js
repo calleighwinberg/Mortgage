@@ -5,6 +5,8 @@ const ejsMate = require('ejs-mate');
 const TCA = require('./models/tca');
 const methodOverride = require('method-override');
 //const Scenario = require('./models/scenario');
+const passport = require('passport');
+const localStrategy = require('passport-local') ;
 
 mongoose.connect('mongodb://localhost:27017/mortgage-planning', {
     useNewUrlParser: true,
