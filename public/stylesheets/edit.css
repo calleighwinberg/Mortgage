@@ -40,7 +40,7 @@ ul {
 
 #moreInfo {  
     border: 3px;
-    outline-width: medium;
+    outline-width: thin;
     outline-style: solid;
     outline-color: #ff8080;
 }

@@ -1,7 +1,12 @@
 <% layout('layout/boilerplate') %>
     <main class="container mt-5 ml-5 mr-5">
         <%- include('../partials/flash')%>
-        <h2>Good afternoon, Calleigh</h2>
+        <div class="">
+            <% if(currentUser) {%>
+            <h1>Welcome, <%= currentUser.username %> </h1>
+            <% } else { %>
+            <% } %>
+          </div>
 
         <div class="card">
             <div>
@@ -32,7 +37,11 @@
                                     <%= tca.lastModified %>
                                 </td>
                                 <td><a href="/tcas/<%= tca._id %>" class="index1 btn text-dark">View</a></td>
+                                <% if (currentUser && tca.author.equals(currentUser._id)) {%>
                                 <td><a href="/tcas/<%=tca._id%>/edit" class=" index1 btn text-dark">Update</a></td>
+                                <% } else { %>
+                                <td></td>
+                                <% } %>
 
                             </tr>
                             <%}%>
