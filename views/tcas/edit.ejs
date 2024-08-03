@@ -292,7 +292,7 @@
                         </form>
 
 
-                        <form id="closingCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST"
+                        <form id="closingCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
                             target="dummyframe">
                             <div class="mb-3">
                                 <label class="form-label" for="name">APR related closing costs</label>
@@ -312,9 +312,10 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="name">Non-APR Costs</label>
-                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$ " id="scenarioAPR"
+                                <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$" id="scenarioAPR"
                                     placeholder="$0.00" name="tca[cc3][noAPRcosts]" value="<%=tca.cc3.noAPRcosts%>">
                             </div>
+
                             <div class="mb-3">
                                 <label class="form-label" for="name">Contributions</label>
                                 <input class="form-control" type="text" pattern="^\d*(\.\d{0,2})?$"
@@ -326,7 +327,7 @@
                             </div>
                         </form>
 
-                        <form id="monthlyCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PUT" method="POST"
+                        <form id="monthlyCosts3" class="form" action="/tcas/<%=tca._id%>?_method=PATCH" method="POST"
                             target="dummyframe">
                             <div class="mb-3">
                                 <label class="form-label" for="name">HOA dues</label>
