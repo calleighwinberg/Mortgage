@@ -93,11 +93,11 @@ app.use('/', users) ;
 
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('home') ;
 }) ;
 
 app.use((err, req, res, next) => {
-    resizeTo.send('wrong')
+    resizeTo.send('wrong') ;
 }) ;
 
 
