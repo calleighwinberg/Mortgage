@@ -19,8 +19,8 @@ const users = require('./routes/users');
 //const MongoStore = require('connect-mongo') ;
 const MongoDBstore = require('connect-mongo')(session);
 
-//const dbURL = process.env.DB_URL;
-const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/mortgage-planning' ;
+//const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -55,11 +55,11 @@ app.use(express.static(path.join(__dirname, 'public'))) ;
 store.on("error", function (e) {
     console.log("session store error", e)
 })*/
+const secret = process.env.SECRET || 'backup'
 const store = new MongoDBstore ({
     url: dbUrl,
     touchAfter: 24 * 60 * 60,
-    secret: 'thisshouldbeabettersecret!'
-    
+    secret
 });
 store.on("error", function (e) {
     console.log("session store error", e)
@@ -69,7 +69,7 @@ store.on("error", function (e) {
 const sessionConfig = {
     store, //we should now be using mongo to store our information 
     name: 'sessName', //we dont want to use default name 
-    secret: 'thisshouldbeabettersecret!',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
