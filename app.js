@@ -33,28 +33,16 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-const app = express()
+const app = express() ;
 
-app.engine('ejs', ejsMate)
-app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, 'views'))
+app.engine('ejs', ejsMate) ;
+app.set('view engine', 'ejs') ;
+app.set('views', path.join(__dirname, 'views')) ;
 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true })) ;
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public'))) ;
 
-
-
-/*const store = MongoStore.create({
-    mongoUrl: dbUrl,
-    touchAfter: 24 * 60 * 60,
-    crypto: {
-        secret: 'thisshouldbeabettersecret!'
-    }
-});
-store.on("error", function (e) {
-    console.log("session store error", e)
-})*/
 const secret = process.env.SECRET || 'backup'
 const store = new MongoDBstore ({
     url: dbUrl,
@@ -63,8 +51,7 @@ const store = new MongoDBstore ({
 });
 store.on("error", function (e) {
     console.log("session store error", e)
-})
-
+});
 
 const sessionConfig = {
     store, //we should now be using mongo to store our information 
@@ -78,7 +65,8 @@ const sessionConfig = {
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7, //miliseconds in a week. 
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
-}
+} ;
+
 app.use(session(sessionConfig)) ;
 app.use(flash()) ;
 
@@ -98,7 +86,7 @@ app.use((req, res, next) => {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next(); //make sure to proceed to next call 
-})
+}) ;
 
 
 //test
@@ -106,7 +94,7 @@ app.get('/make', async (req, res) => {
     const user = new User({email: 'cw@gmail.com', username: 'cw'}) ;
     const newUser = await User.register(user, 'password') ;
     res.send(newUser) ;
-})
+}) ;
 
 app.use('/tcas', tcas) ;
 app.use('/', users) ;
@@ -114,13 +102,14 @@ app.use('/', users) ;
 
 app.get('/', (req, res) => {
     res.render('home')
-})
+}) ;
 
 app.use((err, req, res, next) => {
     resizeTo.send('wrong')
-})
+}) ;
 
 
-app.listen(3000, ()=> {
-    console.log('serving on port 3000')
-})
+const port = process.env.PORT || 3000;
+app.listen(port, ()=> {
+    console.log(`serving on port ${port}`)
+}) ;
