@@ -13,7 +13,7 @@ Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and d
 ## Anyone can view every analysis created, but only owners can make edits.
 ![image](https://github.com/user-attachments/assets/a5cbb6de-b37a-49b1-8f83-03c537c1b7cc)
 
-## User can then create financing scenarios for their clients.
+## Users can then create financing scenarios for their clients.
 ![image](https://github.com/user-attachments/assets/9da6dc82-e058-4ae6-ad11-5d0393f1e8c8)
 
 ## Presentation view to share the analysis with clients. 
