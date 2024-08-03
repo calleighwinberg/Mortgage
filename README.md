@@ -60,11 +60,23 @@ Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and d
 2. Install dependencies in your virtual environment.
     ```
    npm install ejs-mate
+     ```
+     ```
   npm install bootstrap-icons 
+   ```
+     ```
   npm install mongoose
+ ```
+     ```
   brew tap mongodb/brew
+   ```
+     ```
   npm install passport
+ ```
+     ```
   npm install express-session
+   ```
+     ```
   npm install connect-flash
    ```
 
