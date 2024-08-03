@@ -132,11 +132,11 @@ function computeS2() {
 
     var pi = computePI(checkNull(tca.scenariotwo.price), checkNull(tca.scenariotwo.downPayment),
         checkNull(tca.scenariotwo.rate), checkNull(tca.scenariotwo.term));
-    console.log(pi)
+
     
     var piti = computePITI(pi, checkNull(tca.mc2.hoa), checkNull(tca.mc2.hazIns), checkNull(tca.mc2.taxes), checkNull(tca.mc2.pmi));
     document.getElementById('payment2').innerHTML = format(piti);
-    console.log(piti)
+
 
     points = computePoints(tca.cc2.points, loan);
     var ctc = computeCashToClose(tca.scenariotwo.downPayment, tca.cc2.aprCosts, points,

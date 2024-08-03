@@ -19,7 +19,7 @@ const users = require('./routes/users');
 const MongoStore = require('connect-mongo') ;
 //const MongoDBstore = require('connect-mongo')(session);
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/mortgage-planning' ;
+const dbUrl = process.env.DB_URL ;
 //const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -109,7 +109,8 @@ app.use((err, req, res, next) => {
 }) ;
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
+//const port = 3000
 app.listen(port, ()=> {
     console.log(`serving on port ${port}`)
 }) ;
