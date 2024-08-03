@@ -2,7 +2,6 @@ if(process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
-
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose');
@@ -17,16 +16,12 @@ const tcas = require('./routes/tcas');
 const users = require('./routes/users');
 
 const MongoStore = require('connect-mongo') ;
-//const MongoDBstore = require('connect-mongo')(session);
 
 //const dbUrl = process.env.DB_URL ;
 //const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
 const dbUrl = 'mongodb+srv://calleighwinberg:PenDog17Lucy!@cluster0.p9tqpn8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
-mongoose.connect(dbUrl, {
-    //useNewUrlParser: true,
-    //useUnifiedTopology: true,  
-})
+mongoose.connect(dbUrl, { })
 
 const connection = mongoose.createConnection(dbUrl)
 const db = mongoose.connection;
@@ -92,8 +87,6 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error');
     next(); //make sure to proceed to next call 
 }) ;
-
-
 
 app.use('/tcas', tcas) ;
 app.use('/', users) ;
