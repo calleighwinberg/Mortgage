@@ -71,6 +71,7 @@ function monthlySavings(piti1, piti2, piti3) {
 }
 
 function computeS1() {
+    console.log(tca)  ;
     var loan = tca.scenarioone.price - tca.scenarioone.downPayment;
     document.getElementById('price1').innerHTML = format(tca.scenarioone.price);
     document.getElementById('loan1').innerHTML = format(loan);

@@ -1,3 +1,8 @@
+if(process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
+
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose');
@@ -8,11 +13,15 @@ const flash = require('connect-flash') ;
 const passport = require('passport');
 const LocalStrategy = require('passport-local') ;
 const User = require('./models/user') ;
-
 const tcas = require('./routes/tcas');
 const users = require('./routes/users');
 
-mongoose.connect('mongodb://localhost:27017/mortgage-planning', {
+//const MongoStore = require('connect-mongo') ;
+const MongoDBstore = require('connect-mongo')(session);
+
+//const dbURL = process.env.DB_URL;
+const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     
@@ -34,8 +43,31 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public'))) ;
 
+
+
+/*const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret: 'thisshouldbeabettersecret!'
+    }
+});
+store.on("error", function (e) {
+    console.log("session store error", e)
+})*/
+const store = new MongoDBstore ({
+    url: dbUrl,
+    touchAfter: 24 * 60 * 60,
+    secret: 'thisshouldbeabettersecret!'
+    
+});
+store.on("error", function (e) {
+    console.log("session store error", e)
+})
+
+
 const sessionConfig = {
-    //store, //we should now be using mongo to store our information 
+    store, //we should now be using mongo to store our information 
     name: 'sessName', //we dont want to use default name 
     secret: 'thisshouldbeabettersecret!',
     resave: false,
