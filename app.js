@@ -20,12 +20,12 @@ const MongoStore = require('connect-mongo') ;
 //const MongoDBstore = require('connect-mongo')(session);
 
 //const dbUrl = process.env.DB_URL ;
-const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
-//const dbUrl = 'mongodb+srv://calleighwinberg:PenDog17Lucy!@cluster0.p9tqpn8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+//const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
+const dbUrl = 'mongodb+srv://calleighwinberg:PenDog17Lucy!@cluster0.p9tqpn8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
 mongoose.connect(dbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    
+    //useNewUrlParser: true,
+    //useUnifiedTopology: true,  
 })
 
 const connection = mongoose.createConnection(dbUrl)
