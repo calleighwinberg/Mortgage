@@ -16,8 +16,8 @@ const User = require('./models/user') ;
 const tcas = require('./routes/tcas');
 const users = require('./routes/users');
 
-//const MongoStore = require('connect-mongo') ;
-const MongoDBstore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo') ;
+//const MongoDBstore = require('connect-mongo')(session);
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/mortgage-planning' ;
 //const dbUrl = 'mongodb://localhost:27017/mortgage-planning' ;
@@ -44,8 +44,8 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public'))) ;
 
 const secret = process.env.SECRET || 'backup'
-const store = new MongoDBstore ({
-    url: dbUrl,
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
     secret
 });
