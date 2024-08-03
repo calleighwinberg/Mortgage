@@ -19,12 +19,12 @@ Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and d
 ## Presentation view to share the analysis with clients. 
 ![image](https://github.com/user-attachments/assets/3551cace-09e1-47d0-8e82-53deb7fdf5fc)
 
+## "More info" shows an in depth breakdown of closing costs and monthly costs.
+![image](https://github.com/user-attachments/assets/4a181940-1a52-4e79-9386-2f1c70c07bb3)
 
-## Users can log in/register 
+
+## Users can log in/register. 
 ![image](https://github.com/user-attachments/assets/4b317617-c727-4cf3-8547-6a540097b9d4) ![image](https://github.com/user-attachments/assets/0cc910cb-bced-4c52-b12d-bb4b045eea25)
-
-
-## Presentations can be viewed in "presentation mode" 
 
 
 
