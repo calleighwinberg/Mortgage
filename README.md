@@ -4,7 +4,7 @@ Mortgage Literate is a tool for Loan Officers and Real Estate Agents to share fi
 
 Users can create multiple financing options for their clients to compare rate, payment, and product options.
 
-<img width="945" alt="Screenshot 2024-03-20 at 11 13 19 AM" src="https://github.com/calleighwinberg/YelpCamp/assets/149536156/4eb1e47e-24d6-4468-920d-b55523bfd80c">
+![image](https://github.com/user-attachments/assets/837736fe-bdc9-4151-a51d-691e2cd6850d)
 
 ### Description
 
