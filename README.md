@@ -38,7 +38,7 @@ Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and d
 * MongoDB - open-source cross-platform document-oriented NoSQL database program to store details like users info amd financing client models.
 
 * PassportJS - authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application
-* 
+
 * Heroku - cloud platform for web application deployment 
 
 * AWS - mongodb is hosted on amazon ec2 instance
@@ -67,6 +67,7 @@ Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and d
   npm install express-session
   npm install connect-flash
    ```
+
 3. Install MongoDB using the link - https://www.mongodb.com/docs/manual/installation/.
 
 4. Follow instructions to set un a Mongo database using Atlas - https://www.mongodb.com/products/platform/atlas-database.
