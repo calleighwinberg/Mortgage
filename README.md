@@ -8,7 +8,7 @@ Users can create multiple financing options for their clients to compare rate, p
 
 ### Description
 
-Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and deployment. Passport.js is used to handle authentication. Mortgage Literate aims to build an alternative resource that allows homebuyers to compare their financing options in a straighforward way. The app hosts the production database of users and their assocciated clients through Atlas MongoDB and is deployed using Heroku. 
+Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and deployment. Passport.js is used to handle authentication. Mortgage Literate aims to build an alternative resource that allows homebuyers to compare their financing options in a straighforward way. The app hosts the production database of users and their associated clients through Atlas MongoDB and is deployed using Heroku. 
 
 ## Anyone can view every analysis created.
 ![image](https://github.com/user-attachments/assets/a5cbb6de-b37a-49b1-8f83-03c537c1b7cc)
@@ -89,7 +89,7 @@ Mortgage Literate uses Node.js, Express, MongoDB, and Bootstrap for design and d
 
 4. Follow instructions to set un a Mongo database using Atlas - https://www.mongodb.com/products/platform/atlas-database.
  
-7. Follow instructions to create Heroku account to deploy the applciation - https://dashboard.heroku.com/apps.
+7. Follow instructions to create Heroku account to deploy the application - https://dashboard.heroku.com/apps.
 
 
 
