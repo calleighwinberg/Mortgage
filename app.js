@@ -27,6 +27,7 @@ mongoose.connect(dbUrl, {
     
 })
 
+const connection = mongoose.createConnection(dbUrl)
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
@@ -44,7 +45,10 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public'))) ;
 
 const secret = process.env.SECRET || 'backup'
+
+
 const store = MongoStore.create({
+    client: connection.getClient(),
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
     secret
@@ -103,8 +107,8 @@ app.use((err, req, res, next) => {
 }) ;
 
 
-//const port = process.env.PORT;
-const port = 3000
+const port = process.env.PORT;
+//const port = 3000
 app.listen(port, ()=> {
     console.log(`serving on port ${port}`)
 }) ;
