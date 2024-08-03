@@ -89,12 +89,6 @@ app.use((req, res, next) => {
 }) ;
 
 
-//test
-app.get('/make', async (req, res) => {
-    const user = new User({email: 'cw@gmail.com', username: 'cw'}) ;
-    const newUser = await User.register(user, 'password') ;
-    res.send(newUser) ;
-}) ;
 
 app.use('/tcas', tcas) ;
 app.use('/', users) ;
